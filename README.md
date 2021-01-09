@@ -1,4 +1,4 @@
-# :runner: project3 :runner:
+# :runner: Project3 :runner:
 
 ![Languages](https://img.shields.io/github/languages/count/theycallmemattyd/project3)
 ![Code Size](https://img.shields.io/github/languages/code-size/theycallmemattyd/project3)
