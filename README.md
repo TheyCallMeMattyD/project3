@@ -10,4 +10,4 @@
 ![GitHub last commit](https://img.shields.io/github/last-commit/theycallmemattyd/project3?style=for-the-badge)  
 
 ## Description
-> Running is a great form of exercise, and one of the greatest aspects of running is that you burn a lot of calories.  Now  the best part about burning a lot of calories is the fact that you get to eat a lot of calories.  That’s why we developed Run4.  It’s an app for fun runs involving food and drink, because we run for pizza… or whatever you want.  
+> Running is a great form of exercise, and one of the greatest aspects of running is that you burn a lot of calories.  The best part about burning a lot of calories is the fact that you get to EAT a lot of calories.  That’s why we developed Run4.  It’s an app for fun runs involving food and drink, because we run for pizza… or whatever you want.  
