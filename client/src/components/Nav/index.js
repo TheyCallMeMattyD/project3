@@ -6,6 +6,7 @@ function Nav() {
   const [store] = useStoreContext();
 
   return (
+
     <nav className="navbar navbar-expand-lg navbar-light fixed-top">
     <div className="container">
       <Link className="navbar-brand" to={"/"}>Home</Link>
@@ -21,6 +22,7 @@ function Nav() {
       </div>
     </div>
   </nav>
+
   );
 }
 
