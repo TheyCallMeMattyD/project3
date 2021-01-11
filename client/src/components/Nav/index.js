@@ -22,7 +22,7 @@ function Nav() {
       </div>
     </div>
   </nav>
->>>>>>> f36530ae058f6e0e6c3cf782f3146c29dac74f41
+
   );
 }
 
