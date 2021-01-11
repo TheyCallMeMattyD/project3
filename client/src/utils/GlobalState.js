@@ -4,6 +4,7 @@ import {
   REMOVE_POST,
   UPDATE_POSTS,
   ADD_POST,
+  ADD_MEMBER,
   ADD_FAVORITE,
   UPDATE_FAVORITES,
   REMOVE_FAVORITE,
@@ -33,6 +34,12 @@ const reducer = (state, action) => {
     return {
       ...state,
       posts: [action.post, ...state.posts],
+      loading: false
+    };
+  case ADD_MEMBER:
+    return {
+      ...state,
+      members: [action.member, ...state.members],
       loading: false
     };
 
@@ -85,6 +92,15 @@ const StoreProvider = ({ value = [], ...props }) => {
       title: "",
       body: "",
       author: ""
+    },
+    members: [],
+    currentMember: {
+      _id: 0,
+      firstname: "",
+      lastname: "",
+      email: "",
+      password: ""
+
     },
     favorites: [],
     loading: false
