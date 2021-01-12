@@ -20,5 +20,18 @@ export default {
   // Saves member to the database
   saveMember: function(memberData) {
     return axios.post("/api/sign-up", memberData);
+  },
+  // Gets all posts
+  getMembers: function() {
+    return axios.get("/api/sign-up");
+  },
+   // Gets the post with the given id
+   getMember: function(id) {
+    return axios.get("/api/sign-up/" + id);
+  },
+  // Deletes the post with the given id
+  deleteMember: function(id) {
+    return axios.delete("/api/sign-up/" + id);
   }
+
 };

@@ -13,5 +13,8 @@ router
   .get(postsController.findById)
   .put(postsController.update)
   .delete(postsController.remove);
+  // Matches with "/api/sign-up"
+
+
 
 module.exports = router;
