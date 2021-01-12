@@ -18,7 +18,6 @@ const Home = () => {
           <p class="members" >Members list</p>
         </Col>
         {/* <Col size="md-6">
-        temporary
           <CreatePostForm />
         </Col> */}
         <Col size="md-6 sm-12">
