@@ -15,6 +15,7 @@ function App() {
       <div>
         <StoreProvider>
           <Nav />
+          {/* <Jumbotron /> */}
           <Switch>
             <Route exact path="/" component={Home} />
 
