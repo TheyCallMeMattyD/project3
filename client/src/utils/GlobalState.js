@@ -1,8 +1,11 @@
 import React, { createContext, useReducer, useContext } from "react";
 import {
   SET_CURRENT_POST,
+  SET_CURRENT_MEMBER,
   REMOVE_POST,
+  REMOVE_MEMBER,
   UPDATE_POSTS,
+  UPDATE_MEMBERS,
   ADD_POST,
   ADD_MEMBER,
   ADD_FAVORITE,
@@ -22,11 +25,23 @@ const reducer = (state, action) => {
       currentPost: action.post,
       loading: false
     };
+  case SET_CURRENT_MEMBER:
+    return {
+      ...state,
+      currentMember: action.member,
+      loading: false
+    };
 
   case UPDATE_POSTS:
     return {
       ...state,
       posts: [...action.posts],
+      loading: false
+    };
+  case UPDATE_MEMBERS:
+    return {
+      ...state,
+      members: [...action.members],
       loading: false
     };
 
@@ -48,6 +63,13 @@ const reducer = (state, action) => {
       ...state,
       posts: state.posts.filter((post) => {
         return post._id !== action._id; 
+      })
+    };
+  case REMOVE_MEMBER:
+    return {
+      ...state,
+      members: state.members.filter((member) => {
+        return member._id !== action._id; 
       })
     };
 
