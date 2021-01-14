@@ -56,8 +56,10 @@ function PostsList() {
       ) : (
         <h3>You haven't added any posts yet!</h3>
       )}
-      <div className="mt-5">
-        <Link to="favorites">View favorites</Link>
+      <div className="mt-5">     
+        <Link to="CreateEvent">
+          <button type="button" class="btn btn-success">Create New Event</button>
+        </Link>
       </div>
     </div>
   );
