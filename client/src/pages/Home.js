@@ -18,9 +18,6 @@ const Home = () => {
         <Col size="md-4 sm-12" >
           <MembersList />
         </Col>
-        {/* <Col size="md-6">
-          <CreatePostForm />
-        </Col> */}
         <Col size="md-6 sm-12">
           <PostsList />
         </Col>
