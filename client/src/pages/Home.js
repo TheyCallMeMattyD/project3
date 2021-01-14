@@ -16,6 +16,7 @@ const Home = () => {
       </div>
       <Row>
         <Col size="md-4 sm-12" >
+        <h1>All Members</h1>
           <MembersList />
         </Col>
         <Col size="md-6 sm-12">

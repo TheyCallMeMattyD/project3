@@ -5,6 +5,7 @@ import EventHeader from "../components/EventHeader";
 import API from "../utils/API";
 import { useStoreContext } from "../utils/GlobalState";
 import { SET_CURRENT_POST, ADD_FAVORITE, REMOVE_FAVORITE } from "../utils/actions";
+import MembersList from "../components/MembersList";
 
 const Detail = props => {
   const [state, dispatch] = useStoreContext();
@@ -49,7 +50,11 @@ const Detail = props => {
           </Col>
         </Row>
         <Row>
-          <Col size="md-10 md-offset-1">
+        <Col size="md-4 sm-12" >
+        <h1>Members Attending</h1>
+          <MembersList />
+        </Col>
+          <Col size="md-8 md-offset-1">
             <article>
               <h1>Event Description:</h1>
               <p>{state.currentPost.description}</p>
@@ -58,6 +63,11 @@ const Detail = props => {
               <p>Start Time: {state.currentPost.startTime}</p>
               <p>End Time: {state.currentPost.endTime}</p>
             </article>
+            <div className="mt-5">     
+        <Link to="/">
+          <button type="button" class="btn btn-primary">Back to All Events</button>
+        </Link>
+      </div>
           </Col>
           {state.favorites.indexOf(state.currentPost) !== -1 ? (
             <button className="btn btn-danger" onClick={removeFavorite}>
@@ -70,11 +80,7 @@ const Detail = props => {
             )}
         </Row>
         <Row>
-        <div className="mt-5 ml-5">     
-        <Link to="/">
-          <button type="button" class="btn btn-primary">Back to All Events</button>
-        </Link>
-      </div>
+
         </Row>
       </Container>
     ) : (
