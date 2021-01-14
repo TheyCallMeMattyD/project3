@@ -15,20 +15,15 @@ const bookSeed = [
     startTime: "8 am",
     endTime: "12 pm"
   },
-  // {
-  //   event: "The Second Post",
-  //   organizer: "admin",
-  //   description:
-  //     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-  //   date: new Date(Date.now())
-  // },
-  // {
-  //   event: "Another One",
-  //   organizer: "admin",
-  //   description:
-  //     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-  //   date: new Date(Date.now())
-  // }
+  {
+    event: "Bar Blast!",
+    date: new Date(Date.now()),
+    organizer: "Downtown Beer Hound",
+    description: "See how many stops you can make it through... starting at Murphy's Pub",
+    location: "555 Irishtown Lane",
+    startTime: "6 pm",
+    endTime: "9 pm"
+  },
 ];
 
 db.Post.remove({})
