@@ -51,8 +51,12 @@ const Detail = props => {
         <Row>
           <Col size="md-10 md-offset-1">
             <article>
-              <h1>Content:</h1>
-              <p>{state.currentPost.body}</p>
+              <h1>Event Description:</h1>
+              <p>{state.currentPost.description}</p>
+              <p>Date: {state.currentPost.date}</p>
+              <p>Start Location: {state.currentPost.location}</p>
+              <p>Start Time: {state.currentPost.startTime}</p>
+              <p>End Time: {state.currentPost.endTime}</p>
             </article>
           </Col>
           {state.favorites.indexOf(state.currentPost) !== -1 ? (

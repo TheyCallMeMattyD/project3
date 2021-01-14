@@ -113,7 +113,10 @@ const StoreProvider = ({ value = [], ...props }) => {
       _id: 0,
       event: "",
       description: "",
-      organizer: ""
+      organizer: "",
+      location: "",
+      startTime: "",
+      endTime: ""
     },
     members: [],
     currentMember: {

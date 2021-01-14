@@ -10,9 +10,8 @@ const bookSeed = [
     event: "Fun Run in the Sun",
     date: new Date(Date.now()),
     organizer: "RunningMan",
-    description:
-      "We gonna run all around town, starting at the McDonalds on Main St.",
-    startLocation: "123 Main Street",
+    description: "We gonna run all around town, starting at the McDonalds on Main St.",
+    location: "123 Main Street",
     startTime: "8 am",
     endTime: "12 pm"
   },
