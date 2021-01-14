@@ -42,8 +42,8 @@ const Detail = props => {
           <Col size="md-12">
             <EventHeader>
               <h1>
-                Event: {state.currentPost.title} <br/>
-                Organized By: {state.currentPost.author}
+                Event: {state.currentPost.event} <br/>
+                Organized By: {state.currentPost.organizer}
               </h1>
             </EventHeader>
           </Col>
