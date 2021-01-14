@@ -4,18 +4,26 @@ import { ADD_POST, LOADING } from "../../utils/actions";
 import API from "../../utils/API";
 
 function CreatePostForm() {
-  const titleRef = useRef();
-  const bodyRef = useRef();
-  const authorRef = useRef();
+  const eventRef = useRef();
+  const descriptionRef = useRef();
+  const organizerRef = useRef();
+  const locationRef = useRef();
+  const startRef = useRef();
+  const endRef = useRef();
+  const dateRef = useRef();
   const [state, dispatch] = useStoreContext();
 
   const handleSubmit = e => {
     e.preventDefault();
     dispatch({ type: LOADING });
     API.savePost({
-      title: titleRef.current.value,
-      body: bodyRef.current.value,
-      author: authorRef.current.value
+      event: eventRef.current.value,
+      description: descriptionRef.current.value,
+      organizer: organizerRef.current.value,
+      date: dateRef.current.value,
+      location: locationRef.current.value,
+      startTime: startRef.current.value,
+      endTime: endRef.current.value
     })
       .then(result => {
         dispatch({
@@ -25,17 +33,25 @@ function CreatePostForm() {
       })
       .catch(err => console.log(err));
 
-    titleRef.current.value = "";
-    bodyRef.current.value = "";
+    eventRef.current.value = "";
+    dateRef.current.value = "";
+    descriptionRef.current.value = "";
+    organizerRef.current.value = "";
+    locationRef.current.value = "";
+    startRef.current.value = "";
+    endRef.current.value = "";
   };
 
   return (
     <div>
       <h1>Create a New Event</h1>
       <form className="form-group mt-5 mb-5" onSubmit={handleSubmit}>
-        <input className="form-control mb-5" required ref={titleRef} placeholder="Event Name" />
-        <textarea className="form-control mb-5" required ref={bodyRef} placeholder="Body" />
-        <input className="form-control mb-5" ref={authorRef} placeholder="Screen name" />
+        <input className="form-control mb-5" required ref={eventRef} placeholder="Event Name" />
+        <input className="form-control mb-5" required ref={dateRef} placeholder="Event Date" />
+        <textarea className="form-control mb-5" required ref={descriptionRef} placeholder="Description" />
+        <input className="form-control mb-5" required ref={locationRef} placeholder="Start Location" />
+        <input className="form-control mb-5" required ref={startRef} placeholder="Start Time" />
+        <input className="form-control mb-5" required ref={endRef} placeholder="End Time" />
         <button className="btn btn-success mt-3 mb-5" disabled={state.loading} type="submit">
           Save Event
         </button>
