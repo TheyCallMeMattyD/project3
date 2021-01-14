@@ -46,7 +46,8 @@ function PostsList() {
             <ListItem key={post._id}>
               <Link to={"/posts/" + post._id}>
                 <strong>
-                  {post.event} by {post.organizer}
+                  {post.event} by {post.organizer}<br/>
+                  Date: {post.date}
                 </strong>
               </Link>
               <DeleteBtn onClick={() => removePost(post._id)} />
