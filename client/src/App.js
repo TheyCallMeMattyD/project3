@@ -16,8 +16,7 @@ function App() {
       <div>
         <StoreProvider>
           <Nav />
-          <div className="auth-wrapper">
-        <div className="auth-inner">
+         
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/createevent" component={CreateEvent} />
@@ -28,8 +27,7 @@ function App() {
             <Route exact path="/posts/:id" component={Detail} />
             <Route component={NoMatch} />
           </Switch>
-          </div>
-          </div>
+        
         </StoreProvider>
       </div>
     </Router>
