@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
-import Jumbotron from "../components/Jumbotron";
+import EventHeader from "../components/EventHeader";
 import API from "../utils/API";
 import { useStoreContext } from "../utils/GlobalState";
 import { SET_CURRENT_POST, ADD_FAVORITE, REMOVE_FAVORITE } from "../utils/actions";
@@ -32,13 +32,20 @@ const Detail = props => {
   return (
     <>{state.currentPost ? (
       <Container fluid>
+        <div className="jumbotron jumbotron-fluid">
+          <div className="container">
+            <h1 className="display-4">Fluid jumbotron</h1>
+            <p className="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+          </div>
+        </div>
         <Row>
           <Col size="md-12">
-            <Jumbotron>
+            <EventHeader>
               <h1>
+                Event:
                 {state.currentPost.title} by {state.currentPost.author}
               </h1>
-            </Jumbotron>
+            </EventHeader>
           </Col>
         </Row>
         <Row>
@@ -50,23 +57,25 @@ const Detail = props => {
           </Col>
           {state.favorites.indexOf(state.currentPost) !== -1 ? (
             <button className="btn btn-danger" onClick={removeFavorite}>
-                Remove from Favorites!
+              Remove from Favorites!
             </button>
           ) : (
-            <button className="btn" onClick={addFavorite}>
+              <button className="btn" onClick={addFavorite}>
                 ❤️ Add to Favorites
-            </button>
-          )}
+              </button>
+            )}
         </Row>
         <Row>
-          <Col size="md-2">
-            <Link to="/">← Back to Posts</Link>
-          </Col>
+        <div className="mt-5 ml-5">     
+        <Link to="/">
+          <button type="button" class="btn btn-primary">Back to All Events</button>
+        </Link>
+      </div>
         </Row>
       </Container>
     ) : (
-      <div>loading...</div>
-    )}</>
+        <div>loading...</div>
+      )}</>
   );
 };
 
