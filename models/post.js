@@ -6,7 +6,7 @@ const postSchema = new Schema({
   organizer: { type: String, required: true },
   description: String,
   date: { type: Date, default: Date.now },
-  startTime: {type: String, required: true},
+  location: {type: String, required: true},
   startTime: {type: String, required: true},
   endTime: {type: String, required: true}
 });
