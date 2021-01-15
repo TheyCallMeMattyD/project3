@@ -1,5 +1,5 @@
 import React from 'react'
-import { GoogleMap, LoadScript } from '@react-google-maps/api';
+import { GoogleMap, LoadScript, BicyclingLayer } from '@react-google-maps/api';
 
 const containerStyle = {
   width: '400px',
@@ -11,16 +11,24 @@ const center = {
   lng: -77.007507
 };
 
+const onLoad = bicyclingLayer => {
+    console.log('bicyclingLayer: ', bicyclingLayer)
+  }
+
 function MyComponent() {
   return (
     <LoadScript
       googleMapsApiKey=""
     >
       <GoogleMap
+      id="bicycling-example"
         mapContainerStyle={containerStyle}
         center={center}
         zoom={10}
       >
+          <BicyclingLayer
+      onLoad={onLoad}
+    />
         { /* Child components, such as markers, info windows, etc. */ }
         <></>
       </GoogleMap>
