@@ -111,9 +111,12 @@ const StoreProvider = ({ value = [], ...props }) => {
     posts: [],
     currentPost: {
       _id: 0,
-      title: "",
-      body: "",
-      author: ""
+      event: "",
+      description: "",
+      organizer: "",
+      location: "",
+      startTime: "",
+      endTime: ""
     },
     members: [],
     currentMember: {

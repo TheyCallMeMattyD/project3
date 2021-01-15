@@ -21,9 +21,6 @@ const CreateEvent = () => {
         <Col size="md-6">
           <CreatePostForm />
         </Col>
-        {/* <Col size="md-6 sm-12">
-          <PostsList />
-        </Col> */}
       </Row>
     </Container>
   );

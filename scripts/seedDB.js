@@ -7,26 +7,23 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/reactcms");
 
 const bookSeed = [
   {
-    title: "Hello World",
-    author: "admin",
-    body:
-      "Welcome to your first post! To create posts create a title and body. Don't forget to include your screen name!",
-    date: new Date(Date.now())
+    event: "Fun Run in the Sun",
+    date: new Date(Date.now()),
+    organizer: "RunningMan",
+    description: "We gonna run all around town, starting at the McDonalds on Main St.",
+    location: "123 Main Street",
+    startTime: "8 am",
+    endTime: "12 pm"
   },
   {
-    title: "The Second Post",
-    author: "admin",
-    body:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    date: new Date(Date.now())
+    event: "Bar Blast!",
+    date: new Date(Date.now()),
+    organizer: "Downtown Beer Hound",
+    description: "See how many stops you can make it through... starting at Murphy's Pub",
+    location: "555 Irishtown Lane",
+    startTime: "6 pm",
+    endTime: "9 pm"
   },
-  {
-    title: "Another One",
-    author: "admin",
-    body:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    date: new Date(Date.now())
-  }
 ];
 
 db.Post.remove({})

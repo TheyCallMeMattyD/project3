@@ -38,7 +38,7 @@ function MembersList() {
 
   return (
     <div>
-      <h1>All Members</h1>
+
       <h3 className="mb-5 mt-5">Click Member to Contact</h3>
       {state.members.length ? (
         <List>
