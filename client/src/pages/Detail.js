@@ -6,7 +6,7 @@ import API from "../utils/API";
 import { useStoreContext } from "../utils/GlobalState";
 import { SET_CURRENT_POST, ADD_FAVORITE, REMOVE_FAVORITE } from "../utils/actions";
 import MembersList from "../components/MembersList";
-
+import MyComponent from "../components/Map";
 const Detail = props => {
   const [state, dispatch] = useStoreContext();
 
@@ -62,6 +62,7 @@ const Detail = props => {
               <p>Start Location: {state.currentPost.startLocation}</p>
               <p>Start Time: {state.currentPost.startTime}</p>
               <p>End Time: {state.currentPost.endTime}</p>
+              <MyComponent />
             </article>
             <div className="mt-5">     
         <Link to="/">
