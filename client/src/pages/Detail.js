@@ -52,7 +52,7 @@ const Detail = props => {
           </Col>
           <Col size="md-5 sm-12">
             <article>
-              <h2>Event Description:</h2>
+              <h2 class="text-center">Event Description:</h2>
               <p>{state.currentPost.description}</p>
               <p>Date: {state.currentPost.date}</p>
               <p>Start Location: {state.currentPost.startLocation}</p>
