@@ -18,7 +18,7 @@ const onLoad = bicyclingLayer => {
 function MyComponent() {
   return (
     <LoadScript
-      googleMapsApiKey=""
+      googleMapsApiKey="AIzaSyAOV69F_N2yG4trM3Oy8G5slCBcIHCIeV0"
     >
       <GoogleMap
       id="bicycling-example"
