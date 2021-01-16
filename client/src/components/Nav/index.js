@@ -9,7 +9,7 @@ function Nav() {
 
     <nav className="navbar navbar-expand-lg mb-5 fixed-top">
       <div className="container">
-        <Link to="/">
+        <Link to="/home">
           <button type="button" class="navbar-brand btn btn-secondary">Home</button>
         </Link>
         <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
