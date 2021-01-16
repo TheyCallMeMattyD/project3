@@ -49,7 +49,7 @@ function MembersList() {
                   @{member.firstname}{member.lastname}
                 </strong>
               </Link>
-              <DeleteBtn onClick={() => removeMember(member._id)} />
+              {/* <DeleteBtn onClick={() => removeMember(member._id)} /> */}
             </ListItem>
           ))}
         </List>
