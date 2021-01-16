@@ -58,7 +58,7 @@ const Detail = props => {
               <p>Start Location: {state.currentPost.startLocation}</p>
               <p>Start Time: {state.currentPost.startTime}</p>
               <p>End Time: {state.currentPost.endTime}</p>
-              <div className="mt-5">
+              <div className="mt-5 text-center">
               <Link to="/home">
                 <button type="submit" class="btn btn-success">Register to Attend</button>
               </Link>
