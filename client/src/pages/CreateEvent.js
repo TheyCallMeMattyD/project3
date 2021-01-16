@@ -17,7 +17,7 @@ const CreateEvent = () => {
         <Col size="md-4 sm-12" >
           <MembersList />
         </Col>
-        <Col size="md-6">
+        <Col size="md-8">
           <CreatePostForm />
         </Col>
       </Row>

@@ -18,7 +18,7 @@ const Home = () => {
         <h1>All Members</h1>
           <MembersList />
         </Col>
-        <Col size="md-6 sm-12">
+        <Col size="md-8 sm-12">
           <PostsList />
         </Col>
       </Row>
