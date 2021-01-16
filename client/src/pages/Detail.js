@@ -79,9 +79,6 @@ const Detail = props => {
               </button>
             )}
         </Row>
-        <Row>
-
-        </Row>
       </Container>
     ) : (
         <div>loading...</div>
