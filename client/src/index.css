@@ -55,8 +55,8 @@ body, html, .App, #root, .auth-wrapper {
   box-shadow: none;
 }
 
-.auth-wrapper h3 {
-  text-align: center;
+.auth-wrapper h7 {
+
   margin: 0;
   line-height: 1;
   padding-bottom: 20px;

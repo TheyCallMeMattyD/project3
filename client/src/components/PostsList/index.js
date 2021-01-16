@@ -38,7 +38,7 @@ function PostsList() {
 
   return (
     <div>
-      <h1 className="text-center">All Events</h1>
+      <h2 className="text-center">All Events</h2>
       <h3 className="mb-5 mt-5 text-center">Click on an Event to View/Register</h3>
       {state.posts.length ? (
         <List>

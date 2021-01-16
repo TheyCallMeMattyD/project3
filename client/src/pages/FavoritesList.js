@@ -28,9 +28,7 @@ const FavoritesList = () => {
   return (
     <div className="container mb-5 mt-5">
       <h1 className="text-center">Here's All of Your Favorite Posts</h1>
-      {/* <Col size="md-6">
-        <CreatePostForm />
-      </Col> */}
+
       {state.favorites.length ? (
         <List>
           <h3 className="mb-5 mt-5">Click on a post to view in detail</h3>

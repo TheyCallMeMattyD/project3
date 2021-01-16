@@ -1,6 +1,6 @@
 import React from "react";
 import { Col, Row, Container } from "../components/Grid";
-import CreatePostForm from "../components/CreatePostForm";
+import CreateEventForm from "../components/CreateEventForm";
 import PostsList from "../components/PostsList";
 import MembersList from "../components/MembersList";
 import Jumbotron from "../components/Jumbotron";
@@ -11,7 +11,7 @@ const Home = () => {
       <Jumbotron></Jumbotron>
       <Row>
         <Col size="md-4 sm-12" >
-        <h1>All Members</h1>
+        <h2>All Members</h2>
           <MembersList />
         </Col>
         <Col size="md-8 sm-12">
