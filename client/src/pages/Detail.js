@@ -60,9 +60,12 @@ const Detail = props => {
               <p>End Time: {state.currentPost.endTime}</p>
               <MyComponent />
             </article>
-            <div className="mt-5">     
+            <div className="mt-5">
+            <Link to="/">
+          <button type="submit" class="btn btn-success">Register to Attend</button>
+        </Link> 
         <Link to="/">
-          <button type="button" class="btn btn-primary">Back to All Events</button>
+          <button type="button" class="btn btn-primary ml-3">Back to All Events</button>
         </Link>
       </div>
           </Col>
