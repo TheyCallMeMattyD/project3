@@ -19,7 +19,7 @@ function CreatePostForm() {
     API.savePost({
       event: eventRef.current.value,
       description: descriptionRef.current.value,
-      // organizer: organizerRef.current.value,
+      organizer: organizerRef.current.value,
       date: dateRef.current.value,
       location: locationRef.current.value,
       startTime: startRef.current.value,
@@ -36,7 +36,7 @@ function CreatePostForm() {
     eventRef.current.value = "";
     dateRef.current.value = "";
     descriptionRef.current.value = "";
-    // organizerRef.current.value = "";
+    organizerRef.current.value = "";
     locationRef.current.value = "";
     startRef.current.value = "";
     endRef.current.value = "";
