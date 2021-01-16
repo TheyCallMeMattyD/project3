@@ -19,7 +19,7 @@ function CreatePostForm() {
     API.savePost({
       event: eventRef.current.value,
       description: descriptionRef.current.value,
-      organizer: organizerRef.current.value,
+      // organizer: organizerRef.current.value,
       date: dateRef.current.value,
       location: locationRef.current.value,
       startTime: startRef.current.value,
@@ -36,7 +36,7 @@ function CreatePostForm() {
     eventRef.current.value = "";
     dateRef.current.value = "";
     descriptionRef.current.value = "";
-    organizerRef.current.value = "";
+    // organizerRef.current.value = "";
     locationRef.current.value = "";
     startRef.current.value = "";
     endRef.current.value = "";
@@ -44,7 +44,7 @@ function CreatePostForm() {
 
   return (
     <div>
-      <h1>Create a New Event</h1>
+      <h2>Create a New Event</h2>
       <form className="form-group mt-5 mb-5" onSubmit={handleSubmit}>
         <input className="form-control mb-5" required ref={eventRef} placeholder="Event Name" />
         <input className="form-control mb-5" required ref={dateRef} placeholder="Event Date" />

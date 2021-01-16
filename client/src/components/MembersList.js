@@ -39,7 +39,7 @@ function MembersList() {
   return (
     <div>
 
-      <h3 className="mb-5 mt-5">Click Member to Contact</h3>
+      <h7 className="mb-5 mt-5">Click to Contact</h7>
       {state.members.length ? (
         <List>
           {state.members.map(member => (
@@ -49,7 +49,7 @@ function MembersList() {
                   @{member.firstname}{member.lastname}
                 </strong>
               </Link>
-              <DeleteBtn onClick={() => removeMember(member._id)} />
+              {/* <DeleteBtn onClick={() => removeMember(member._id)} /> */}
             </ListItem>
           ))}
         </List>

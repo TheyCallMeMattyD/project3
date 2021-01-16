@@ -11,7 +11,7 @@ const Home = () => {
       <Jumbotron></Jumbotron>
       <Row>
         <Col size="md-4 sm-12" >
-        <h1>All Members</h1>
+        <h2>All Members</h2>
           <MembersList />
         </Col>
         <Col size="md-8 sm-12">
