@@ -7,7 +7,7 @@ function Nav() {
 
   return (
 
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark  fixed-top">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
     <div className="container">
       <Link className="navbar-brand" to={"/"}>Home</Link>
       <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
