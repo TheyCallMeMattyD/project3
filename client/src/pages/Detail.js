@@ -39,17 +39,17 @@ const Detail = props => {
           <Col size="md-12">
             <EventHeader>
               <h1>
-                Event: {state.currentPost.event} <br/>
+                Event: {state.currentPost.event} <br />
                 Organized By: {state.currentPost.organizer}
               </h1>
             </EventHeader>
           </Col>
         </Row>
         <Row>
-        <Col size="md-4 sm-12" >
-        <h1>Members Attending</h1>
-          <MembersList />
-        </Col>
+          <Col size="md-4 sm-12" >
+            <h1>Members Attending</h1>
+            <MembersList />
+          </Col>
           <Col size="md-8 md-offset-1">
             <article>
               <h1>Event Description:</h1>
@@ -61,13 +61,13 @@ const Detail = props => {
               <MyComponent />
             </article>
             <div className="mt-5">
-            <Link to="/">
-          <button type="submit" class="btn btn-success">Register to Attend</button>
-        </Link> 
-        <Link to="/">
-          <button type="button" class="btn btn-primary ml-3">Back to All Events</button>
-        </Link>
-      </div>
+              <Link to="/home">
+                <button type="submit" class="btn btn-success">Register to Attend</button>
+              </Link>
+              <Link to="/home">
+                <button type="button" class="btn btn-primary ml-3">Back to All Events</button>
+              </Link>
+            </div>
           </Col>
           {state.favorites.indexOf(state.currentPost) !== -1 ? (
             <button className="btn btn-danger" onClick={removeFavorite}>
@@ -78,9 +78,6 @@ const Detail = props => {
                 ❤️ Add to Favorites
               </button>
             )}
-        </Row>
-        <Row>
-
         </Row>
       </Container>
     ) : (
