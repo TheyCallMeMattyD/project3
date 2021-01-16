@@ -61,10 +61,10 @@ const Detail = props => {
               <MyComponent />
             </article>
             <div className="mt-5">
-            <Link to="/">
+            <Link to="/home">
           <button type="submit" class="btn btn-success">Register to Attend</button>
         </Link> 
-        <Link to="/">
+        <Link to="/home">
           <button type="button" class="btn btn-primary ml-3">Back to All Events</button>
         </Link>
       </div>
