@@ -5,7 +5,7 @@ function EventHeader({ children }) {
   return (
     <div
       style={{ height: 125, clear: "both", paddingTop: 10, textAlign: "center" }}
-      className="page-header border border-secondary"
+      className="page-header border border-primary"
     >
       {children}
     </div>
