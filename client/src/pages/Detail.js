@@ -55,7 +55,7 @@ const Detail = props => {
               <h2 class="text-center">Event Description:</h2>
               <p>{state.currentPost.description}</p>
               <p>Date: {state.currentPost.date}</p>
-              <p>Start Location: {state.currentPost.startLocation}</p>
+              <p>Start Location: {state.currentPost.location}</p>
               <p>Start Time: {state.currentPost.startTime}</p>
               <p>End Time: {state.currentPost.endTime}</p>
               <div className="mt-5 text-center">
