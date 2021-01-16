@@ -7,7 +7,7 @@ function Nav() {
 
   return (
 
-    <nav className="navbar navbar-expand-lg mb-3">
+    <nav className="navbar navbar-expand-lg mb-5 fixed-top">
       <div className="container">
         <Link to="/">
           <button type="button" class="navbar-brand btn btn-secondary">Home</button>
