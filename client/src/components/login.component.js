@@ -1,10 +1,11 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import "../index.css";
 
 export default class Login extends Component {
     render() {
         return (
-            
+
             <form>
                 <h3>Sign In</h3>
 
@@ -24,12 +25,16 @@ export default class Login extends Component {
                         <label className="custom-control-label" htmlFor="customCheck1">Remember me</label>
                     </div>
                 </div>
-
-                <button type="submit" className="btn btn-primary btn-block">Submit</button>
+                <Link to="Home">
+                    <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                </Link>
                 <p className="forgot-password text-right">
                     Forgot <a href="#">password?</a>
                 </p>
             </form>
+
+
         );
     }
 }
+

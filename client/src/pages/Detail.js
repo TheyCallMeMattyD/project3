@@ -7,6 +7,7 @@ import { useStoreContext } from "../utils/GlobalState";
 import { SET_CURRENT_POST, ADD_FAVORITE, REMOVE_FAVORITE } from "../utils/actions";
 import MembersList from "../components/MembersList";
 import MyComponent from "../components/Map";
+import Jumbotron from "../components/Jumbotron";
 const Detail = props => {
   const [state, dispatch] = useStoreContext();
 
@@ -33,12 +34,7 @@ const Detail = props => {
   return (
     <>{state.currentPost ? (
       <Container fluid>
-        <div className="jumbotron jumbotron-fluid">
-          <div className="container">
-            <h1 className="display-4">Fluid jumbotron</h1>
-            <p className="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
-          </div>
-        </div>
+        <Jumbotron></Jumbotron>
         <Row>
           <Col size="md-12">
             <EventHeader>
