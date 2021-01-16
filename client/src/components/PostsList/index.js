@@ -38,8 +38,8 @@ function PostsList() {
 
   return (
     <div>
-      <h1>All Events</h1>
-      <h3 className="mb-5 mt-5">Click on an Event to View/Register</h3>
+      <h1 className="text-center">All Events</h1>
+      <h3 className="mb-5 mt-5 text-center">Click on an Event to View/Register</h3>
       {state.posts.length ? (
         <List>
           {state.posts.map(post => (
@@ -59,7 +59,7 @@ function PostsList() {
       )}
       <div className="mt-5">     
         <Link to="CreateEvent">
-          <button type="button" class="btn btn-success">Create New Event</button>
+          <button type="button" class="btn btn-primary">Create New Event</button>
         </Link>
       </div>
     </div>

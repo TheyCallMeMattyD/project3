@@ -7,21 +7,27 @@ function Nav() {
 
   return (
 
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
-    <div className="container">
-      <Link className="navbar-brand" to={"/"}>Home</Link>
-      <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
-        <ul className="navbar-nav ml-auto">
-          <li className="nav-item">
-            <Link className="nav-link" to={"/sign-in"}>Login</Link>
-          </li>
-          <li className="nav-item">
-            <Link className="nav-link" to={"/sign-up"}>Sign up</Link>
-          </li>
-        </ul>
+    <nav className="navbar navbar-expand-lg mb-3">
+      <div className="container">
+        <Link to="/">
+          <button type="button" class="navbar-brand btn btn-secondary">Home</button>
+        </Link>
+        <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
+          <ul className="navbar-nav ml-auto">
+            <li>
+              <Link to="/sign-in">
+                <button type="button" class="btn btn-secondary">Login</button>
+              </Link>
+            </li>
+            <li>
+              <Link to="/sign-up">
+                <button type="button" class="btn btn-secondary ml-2">Sign-Up</button>
+              </Link>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
 
   );
 }
