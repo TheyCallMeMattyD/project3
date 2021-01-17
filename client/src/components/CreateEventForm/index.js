@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { useStoreContext, } from "../../utils/GlobalState";
+import { useStoreContext } from "../../utils/GlobalState";
 import { ADD_POST, LOADING } from "../../utils/actions";
 import API from "../../utils/API";
 
@@ -14,9 +14,7 @@ function CreateEventForm() {
   const handleSubmit = e => {
     e.preventDefault();
     dispatch({ type: LOADING });
-    console.log(useStoreContext);
     API.savePost({
-      organizer: state.currentMember.firstname,
       event: eventRef.current.value,
       description: descriptionRef.current.value,
       location: locationRef.current.value,
