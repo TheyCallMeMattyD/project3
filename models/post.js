@@ -2,7 +2,6 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const postSchema = new Schema({
-  organizer: {type: String, required: true},
   event: { type: String, required: true },
   description: {type: String, required: true },
   date: { type: Date, default: Date.now },
