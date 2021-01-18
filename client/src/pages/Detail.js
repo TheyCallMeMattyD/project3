@@ -4,7 +4,7 @@ import { Col, Row, Container } from "../components/Grid";
 import EventHeader from "../components/EventHeader";
 import API from "../utils/API";
 import { useStoreContext } from "../utils/GlobalState";
-import { SET_CURRENT_POST, ADD_FAVORITE, REMOVE_FAVORITE } from "../utils/actions";
+import { SET_CURRENT_POST, SET_CURRENT_MEMBER,  ADD_FAVORITE, REMOVE_FAVORITE, LOADING } from "../utils/actions";
 import MembersList from "../components/MembersList";
 import MyComponent from "../components/Map";
 import Jumbotron from "../components/Jumbotron";
@@ -15,7 +15,9 @@ const Detail = props => {
     API.getPost(props.match.params.id)
       .then(res => dispatch({ type: SET_CURRENT_POST, post: res.data }))
       .catch(err => console.log(err));
+     
   }, []);
+
 
   const addFavorite = () => {
     dispatch({
@@ -40,7 +42,7 @@ const Detail = props => {
             <EventHeader>
               <h1>
                 Event: {state.currentPost.event} <br />
-                Organized By: {state.currentPost.organizer}
+                Organized By: 
               </h1>
             </EventHeader>
           </Col>

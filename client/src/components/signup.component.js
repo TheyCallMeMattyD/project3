@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { Link } from "react-router-dom";
+
 import { useStoreContext } from "../utils/GlobalState";
 import { ADD_MEMBER, LOADING } from "../utils/actions";
 import API from "../utils/API";
@@ -62,9 +62,9 @@ function CreateMemberForm() {
         <label>Password</label>
         <input type="password" className="form-control" required ref={passwordRef} placeholder="Enter password" />
       </div>
-      <Link to="Home">
+     
         <button type="submit" class="btn btn-primary btn-block">Submit</button>
-      </Link>
+      
       <p className="forgot-password text-right">
         Already registered <a href={"/sign-in"}>sign in?</a>
       </p>
