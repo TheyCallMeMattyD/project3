@@ -15,6 +15,7 @@ function CreateEventForm() {
     e.preventDefault();
     dispatch({ type: LOADING });
     API.savePost({
+    
       event: eventRef.current.value,
       description: descriptionRef.current.value,
       location: locationRef.current.value,
