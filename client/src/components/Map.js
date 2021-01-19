@@ -27,7 +27,7 @@ function MapComponent(props) {
   }, []);
 
   // const API_KEY = process.env.REACT_APP_GOOGLE_API_KEY;
-Geocode.setApiKey("AIzaSyBojLhxV3SQs5u5-LoByYaEmnJmgu8GCBk");
+Geocode.setApiKey("");
 Geocode.setLanguage("en");
 Geocode.setRegion("us");
 Geocode.enableDebug();
@@ -68,7 +68,7 @@ console.log(state, "this is state")
   return (
     
     <LoadScript
-      googleMapsApiKey="AIzaSyBojLhxV3SQs5u5-LoByYaEmnJmgu8GCBk"
+      googleMapsApiKey=""
     >
       <GoogleMap
       id="marker-example"
