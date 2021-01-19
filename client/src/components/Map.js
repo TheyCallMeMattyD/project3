@@ -68,7 +68,7 @@ console.log(state, "this is state")
   return (
     
     <LoadScript
-      googleMapsApiKey="AIzaSyAOV69F_N2yG4trM3Oy8G5slCBcIHCIeV0"
+      googleMapsApiKey=""
     >
       <GoogleMap
       id="marker-example"
