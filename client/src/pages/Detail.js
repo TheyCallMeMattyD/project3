@@ -4,9 +4,9 @@ import { Col, Row, Container } from "../components/Grid";
 import EventHeader from "../components/EventHeader";
 import API from "../utils/API";
 import { useStoreContext } from "../utils/GlobalState";
-import { SET_CURRENT_POST, SET_CURRENT_MEMBER,  ADD_FAVORITE, REMOVE_FAVORITE, LOADING } from "../utils/actions";
+import { SET_CURRENT_POST, SET_CURRENT_MEMBER,  ADD_FAVORITE, REMOVE_FAVORITE } from "../utils/actions";
 import MembersList from "../components/MembersList";
-import MyComponent from "../components/Map";
+import MapComponent from "../components/Map";
 import Jumbotron from "../components/Jumbotron";
 const Detail = props => {
   const [state, dispatch] = useStoreContext();
@@ -17,6 +17,7 @@ const Detail = props => {
       .catch(err => console.log(err));
      
   }, []);
+
 
 
   const addFavorite = () => {
@@ -71,7 +72,7 @@ const Detail = props => {
             </article>
             </Col>
             <Col size="md-4 sm-12">
-              <MyComponent />
+              <MapComponent />
             </Col>
 
   
