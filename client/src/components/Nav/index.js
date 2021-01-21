@@ -20,7 +20,7 @@ function Nav() {
               </Link>
             </li>
             <li>
-              <Link to="/sign-up">
+              <Link to="/users">
                 <button type="button" class="btn btn-secondary ml-2">Sign-Up</button>
               </Link>
             </li>

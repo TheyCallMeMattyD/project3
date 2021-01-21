@@ -7,7 +7,7 @@ const passport = require("./routes/setup");  // THIS MAY BE WRONG
 const auth = require("./routes/auth");
 
 const app = express();
-const PORT = process.env.PORT 5000;  // THIS PORT MAY NEED TO GO BACK TO 3001
+const PORT = 5000;  // THIS PORT MAY NEED TO GO BACK TO 3001
 const MONGO_URI = "mongodb: //127.0.0.1:27017//tutorial_social_login";
 
 // ----------------------------- INSERTED FROM GIST -----------------------

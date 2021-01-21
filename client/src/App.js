@@ -25,7 +25,7 @@ function App() {
             <Route exact path="/createevent" component={CreateEvent} />
             <Route exact path="/home" component={Home} />
             <Route path="/sign-in" component={Login} />
-            <Route path="/Users" component={SignUp} />
+            <Route path="/Users" component={Users} />
             <Route exact path="/favorites" component={FavoritesList} />
             <Route exact path="/posts/:id" component={Detail} />
             <Route component={NoMatch} />

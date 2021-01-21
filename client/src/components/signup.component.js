@@ -5,7 +5,8 @@ import axios from "axios";
 import { useStoreContext } from "../utils/GlobalState";
 import { ADD_MEMBER, LOADING } from "../utils/actions";
 import API from "../utils/API";
-import "../index.css";
+import "/src/index.css";
+import SignupLoginModal from "./SignupLoginModal";
 
 
 
@@ -75,4 +76,4 @@ function CreateMemberForm() {
   // }
 }
 
-export default CreateMemberForm;
+export default SignupLoginModal;
