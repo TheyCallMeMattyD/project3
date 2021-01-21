@@ -21,6 +21,10 @@ export default {
   saveMember: function(memberData) {
     return axios.post("/api/sign-up", memberData);
   },
+
+  authenticateMember: function(memberData) {
+    return axios.post("/api/auth/login", memberData);
+  },
   // Gets all posts
   getMembers: function() {
     return axios.get("/api/sign-up");

@@ -1,10 +1,11 @@
 const router = require("express").Router();
 const signUpController = require("../../controllers/signUpController");
+const isAuthenticated = require("../../config/isAuthenticated");
 
 // Matches with "/api/sign-up"
 router
   .route("/")
-  .get(signUpController.findAll)
+  .get(isAuthenticated, signUpController.findAll)
   .post(signUpController.create);
 
 // Matches with "/api/sign-up/:id"

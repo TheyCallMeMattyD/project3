@@ -4,7 +4,6 @@ import DeleteBtn from "../components/DeleteBtn";
 import { Link } from "react-router-dom";
 import { useStoreContext } from "../utils/GlobalState";
 import { REMOVE_FAVORITE, LOADING, UPDATE_FAVORITES } from "../utils/actions";
-import { Col, Row, Container } from "../components/Grid";
 
 const FavoritesList = () => {
   const [state, dispatch] = useStoreContext();

@@ -2,8 +2,10 @@ import React, { useRef } from "react";
 import { useStoreContext } from "../../utils/GlobalState";
 import { ADD_POST, LOADING } from "../../utils/actions";
 import API from "../../utils/API";
+import { useHistory } from "react-router-dom";
 
 function CreateEventForm() {
+  const history = useHistory();
   const eventRef = useRef();
   const descriptionRef = useRef();
   const locationRef = useRef();
@@ -16,7 +18,6 @@ function CreateEventForm() {
     e.preventDefault();
     dispatch({ type: LOADING });
     API.savePost({
-    
       event: eventRef.current.value,
       description: descriptionRef.current.value,
       location: locationRef.current.value,
@@ -30,7 +31,11 @@ function CreateEventForm() {
           post: result.data
         });
       })
-      .catch(err => console.log(err));
+      .catch((error) => {
+        if (error.response.status === 401) {
+          history.push('/login')
+        }
+    });
 
     eventRef.current.value = "";
     descriptionRef.current.value = "";

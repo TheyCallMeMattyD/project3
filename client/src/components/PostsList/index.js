@@ -59,7 +59,7 @@ function PostsList() {
       )}
       <div className="mt-5">     
         <Link to="CreateEvent">
-          <button type="button" class="btn btn-primary">Create New Event</button>
+          <button type="button" className="btn btn-primary">Create New Event</button>
         </Link>
       </div>
     </div>

@@ -48,7 +48,6 @@ function MapComponent(props) {
         });
  })
       .catch(err => console.log(err));
-     
   }, []);
 
   
