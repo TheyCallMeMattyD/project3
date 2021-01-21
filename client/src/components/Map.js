@@ -76,9 +76,9 @@ function createKey(location) {
   return location.lat + location.lng
 }
 
-console.log(locations, "RUN");
+// console.log(locations, "RUN");
   
-console.log(state, "this is state")
+// console.log(state, "this is state")
   return (
     
     <LoadScript
