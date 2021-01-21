@@ -6,9 +6,9 @@ import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
 import { StoreProvider } from "./utils/GlobalState";
 import FavoritesList from "./pages/FavoritesList";
-import Login from "./components/login.component";
-import Users from "./components/signup.component";
+import Login from "./components/Login";
 import CreateEvent from "./pages/CreateEvent";
+import SignUpForm from "./components/SignUpForm";
 
 console.log(process.env.REACT_APP_GOOGLE_API_KEY)
 
@@ -18,20 +18,19 @@ function App() {
       <div>
         <StoreProvider>
           <Nav />
-          <div className="auth-wrapper">
-        <div className="auth-inner">
+          {/* <div className="auth-wrapper">
+        <div className="auth-inner"> */}
           <Switch>
-            <Route exact path="/" component={Login} />
+            <Route exact path={["/", "/login"]} component={Login} />
+            <Route exact path="/signup" component={SignUpForm} />
             <Route exact path="/createevent" component={CreateEvent} />
             <Route exact path="/home" component={Home} />
-            <Route path="/sign-in" component={Login} />
-            <Route path="/Users" component={Users} />
             <Route exact path="/favorites" component={FavoritesList} />
             <Route exact path="/posts/:id" component={Detail} />
             <Route component={NoMatch} />
           </Switch>
-          </div>
-          </div>
+          {/* </div>
+          </div> */}
         </StoreProvider>
       </div>
     </Router>

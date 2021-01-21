@@ -5,12 +5,6 @@ import API from "../utils/API";
 import { useStoreContext } from "../utils/GlobalState";
 import { SET_CURRENT_POST} from "../utils/actions";
 
-
-  
-  
-
-
-
 function createKey(location) {
   return location.lat + location.lng
 }
@@ -23,7 +17,6 @@ function MapComponent(props) {
     API.getPost()
       .then(res => dispatch({ type: SET_CURRENT_POST, post: res.data }))
       .catch(err => console.log(err));
-     
   }, []);
 
   // const API_KEY = process.env.REACT_APP_GOOGLE_API_KEY;

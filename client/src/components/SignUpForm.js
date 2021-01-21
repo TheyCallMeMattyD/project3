@@ -1,16 +1,11 @@
 import React, { useRef } from "react";
-
-import axios from "axios";
-
 import { useStoreContext } from "../utils/GlobalState";
 import { ADD_MEMBER, LOADING } from "../utils/actions";
 import API from "../utils/API";
-import "/src/index.css";
+// import "/src/index.css";
 import SignupLoginModal from "./SignupLoginModal";
 
-
-
-function CreateMemberForm() {
+function SignUpForm() {
   const firstNameRef = useRef();
   const lastNameRef = useRef();
   const emailRef = useRef();
@@ -21,8 +16,8 @@ function CreateMemberForm() {
     e.preventDefault();
     dispatch({ type: LOADING });
     API.saveMember({
-      firstname: firstNameRef.current.value,
-      lastname: lastNameRef.current.value,
+      firstName: firstNameRef.current.value,
+      lastName: lastNameRef.current.value,
       email: emailRef.current.value,
       password: passwordRef.current.value
     })
@@ -76,4 +71,4 @@ function CreateMemberForm() {
   // }
 }
 
-export default SignupLoginModal;
+export default SignUpForm;
