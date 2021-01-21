@@ -7,7 +7,7 @@ import { useStoreContext } from "../utils/GlobalState";
 import { UPDATE_DESTINATION, UPDATE_LOCATION} from "../utils/actions";
 
 function MapComponent(props) {
-  Geocode.setApiKey("");
+  Geocode.setApiKey(process.env.REACT_APP_API_KEY);
   Geocode.setLanguage("en");
   Geocode.setRegion("us");
   Geocode.enableDebug();
@@ -20,8 +20,9 @@ function MapComponent(props) {
     API.getPost(id)
       .then(res => {
         Geocode.fromAddress(res.data.location).then(
-          response => { dispatch({ type: UPDATE_LOCATION, location: response.results[0].geometry.location });
-          },
+          response => { dispatch({ type: UPDATE_LOCATION, location: response.results[0].geometry.location })
+         
+      },
          error => {
             console.error(error);
          }
@@ -82,7 +83,7 @@ function createKey(location) {
   return (
     
     <LoadScript
-      googleMapsApiKey=""
+      googleMapsApiKey={ process.env.REACT_APP_API_KEY }
     >
       <GoogleMap
       id="marker-example"

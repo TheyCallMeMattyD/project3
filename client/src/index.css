@@ -31,6 +31,7 @@ body, html, .App, #root, .auth-wrapper {
   background-image: url("components/Jumbotron/image/runningImage.jpg");
   background-color: #457b9d !important;
   color: white;
+  background-size: cover;
 }
 
 .auth-wrapper {
