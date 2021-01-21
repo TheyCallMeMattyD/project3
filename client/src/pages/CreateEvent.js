@@ -1,7 +1,7 @@
 import React from "react";
 import { Col, Row, Container } from "../components/Grid";
 import CreateEventForm from "../components/CreateEventForm";
-import PostsList from "../components/PostsList";
+
 import MembersList from "../components/MembersList";
 import Jumbotron from "../components/Jumbotron";
 
