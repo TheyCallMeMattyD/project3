@@ -10,6 +10,8 @@ import Login from "./components/login.component";
 import SignUp from "./components/signup.component";
 import CreateEvent from "./pages/CreateEvent";
 
+console.log(process.env.REACT_APP_GOOGLE_API_KEY)
+
 function App() {
   return (
     <Router>
