@@ -7,7 +7,7 @@ import Nav from "./components/Nav";
 import { StoreProvider } from "./utils/GlobalState";
 import FavoritesList from "./pages/FavoritesList";
 import Login from "./components/login.component";
-import SignUp from "./components/signup.component";
+import Users from "./components/signup.component";
 import CreateEvent from "./pages/CreateEvent";
 
 console.log(process.env.REACT_APP_GOOGLE_API_KEY)
@@ -25,7 +25,7 @@ function App() {
             <Route exact path="/createevent" component={CreateEvent} />
             <Route exact path="/home" component={Home} />
             <Route path="/sign-in" component={Login} />
-            <Route path="/sign-up" component={SignUp} />
+            <Route path="/Users" component={SignUp} />
             <Route exact path="/favorites" component={FavoritesList} />
             <Route exact path="/posts/:id" component={Detail} />
             <Route component={NoMatch} />
