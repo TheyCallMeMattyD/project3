@@ -7,7 +7,7 @@ import { useStoreContext } from "../utils/GlobalState";
 import { UPDATE_DESTINATION, UPDATE_LOCATION} from "../utils/actions";
 
 function MapComponent(props) {
-  Geocode.setApiKey("AIzaSyBojLhxV3SQs5u5-LoByYaEmnJmgu8GCBk");
+  Geocode.setApiKey("");
   Geocode.setLanguage("en");
   Geocode.setRegion("us");
   Geocode.enableDebug();
@@ -82,7 +82,7 @@ console.log(state, "this is state")
   return (
     
     <LoadScript
-      googleMapsApiKey="AIzaSyBojLhxV3SQs5u5-LoByYaEmnJmgu8GCBk"
+      googleMapsApiKey=""
     >
       <GoogleMap
       id="marker-example"
