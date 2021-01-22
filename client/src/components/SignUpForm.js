@@ -2,7 +2,6 @@ import React, { useRef } from "react";
 import { useStoreContext } from "../utils/GlobalState";
 import { ADD_MEMBER, LOADING } from "../utils/actions";
 import API from "../utils/API";
-// import "/src/index.css";
 
 
 function SignUpForm() {
@@ -35,8 +34,6 @@ function SignUpForm() {
     passwordRef.current.value = "";
   };
 
-  // export default class SignUp extends Component {
-  // render() {
   return (
     <form onSubmit={handleSubmit}>
       <h3>Sign Up</h3>
@@ -68,7 +65,6 @@ function SignUpForm() {
       </p>
     </form>
   );
-  // }
 }
 
 export default SignUpForm;
