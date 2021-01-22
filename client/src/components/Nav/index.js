@@ -23,6 +23,11 @@ function Nav() {
                 <button type="button" className="btn btn-secondary ml-2">Sign-Up</button>
               </Link>
             </li>
+            <li>
+              <Link to="/logout">
+                <button type="button" className="btn btn-secondary ml-2">Logout</button>
+              </Link>
+            </li>
           </ul>
         </div>
       </div>
