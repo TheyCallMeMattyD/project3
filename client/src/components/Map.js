@@ -4,7 +4,9 @@ import { GoogleMap, LoadScript, MarkerClusterer, Marker } from '@react-google-ma
 import Geocode from "react-geocode";
 import API from "../utils/API";
 import { useStoreContext } from "../utils/GlobalState";
+
 import { UPDATE_DESTINATION, UPDATE_LOCATION} from "../utils/actions";
+
 
 function MapComponent(props) {
   Geocode.setApiKey(process.env.REACT_APP_API_KEY);
