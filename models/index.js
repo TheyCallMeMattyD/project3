@@ -1,4 +1,4 @@
 module.exports = {
-  Post: require("./post"),
-  Signup: require("./signup")
+  Post: require("./Post"),
+  User: require("./User")
 };

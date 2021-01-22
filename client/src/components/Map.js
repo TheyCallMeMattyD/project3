@@ -4,7 +4,15 @@ import { GoogleMap, LoadScript, MarkerClusterer, Marker } from '@react-google-ma
 import Geocode from "react-geocode";
 import API from "../utils/API";
 import { useStoreContext } from "../utils/GlobalState";
+<<<<<<< HEAD
 import { UPDATE_DESTINATION, UPDATE_LOCATION} from "../utils/actions";
+=======
+import { SET_CURRENT_POST} from "../utils/actions";
+
+function createKey(location) {
+  return location.lat + location.lng
+}
+>>>>>>> e2b885d8ce0ca56b2e9809389304271c4b909a9f
 
 function MapComponent(props) {
   Geocode.setApiKey("");
@@ -47,7 +55,6 @@ function MapComponent(props) {
         });
  })
       .catch(err => console.log(err));
-     
   }, []);
 
   

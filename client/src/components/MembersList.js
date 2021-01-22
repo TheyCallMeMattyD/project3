@@ -38,25 +38,23 @@ function MembersList() {
 
   return (
     <div>
-
-      <h7 className="mb-5 mt-5">Click to Contact</h7>
+      <h3 className="mb-5 mt-5">Click to Contact</h3>
       {state.members.length ? (
         <List>
           {state.members.map(member => (
             <ListItem key={member._id}>
               <Link to={"/members/" + member._id}>
                 <strong>
-                  @{member.firstname}{member.lastname}
+                  @{member.firstName}{member.lastName}
                 </strong>
               </Link>
-              {/* <DeleteBtn onClick={() => removeMember(member._id)} /> */}
+              <DeleteBtn onClick={() => removeMember(member._id)} />
             </ListItem>
           ))}
         </List>
       ) : (
         <h3>Find some peeps!!</h3>
       )}
-      
     </div>
   );
 }
