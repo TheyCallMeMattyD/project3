@@ -3,7 +3,7 @@ import { Col, Row, Container } from "../components/Grid";
 import PostsList from "../components/PostsList";
 import MembersList from "../components/MembersList";
 import Jumbotron from "../components/Jumbotron";
-
+import "../index.css"
 const Home = () => {
   return (
     <Container fluid>

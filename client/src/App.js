@@ -18,8 +18,8 @@ function App() {
       <div>
         <StoreProvider>
           <Nav />
-          {/* <div className="auth-wrapper">
-        <div className="auth-inner"> */}
+          <div className="auth-wrapper">
+        <div className="auth-inner">
           <Switch>
             <Route exact path={["/", "/login"]} component={Login} />
             <Route exact path="/signup" component={SignUpForm} />
@@ -29,8 +29,8 @@ function App() {
             <Route exact path="/posts/:id" component={Detail} />
             <Route component={NoMatch} />
           </Switch>
-          {/* </div>
-          </div> */}
+          </div>
+          </div>
         </StoreProvider>
       </div>
     </Router>
