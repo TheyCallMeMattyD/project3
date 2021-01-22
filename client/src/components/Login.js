@@ -1,8 +1,6 @@
 import React, { useRef } from "react";
 import API from "../utils/API";
 
-// import "/src/index.css";
-
 function Login() {
     const emailRef = useRef();
     const passwordRef = useRef();
