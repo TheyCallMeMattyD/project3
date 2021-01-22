@@ -39,15 +39,19 @@ function MembersList() {
 
   return (
     <div>
+<<<<<<< HEAD
       <ContactForm />
       <h7 className="mb-5 mt-5">Click to Contact</h7>
+=======
+      <h3 className="mb-5 mt-5">Click to Contact</h3>
+>>>>>>> eccac6957dd75800764227c367e518f13bb385db
       {state.members.length ? (
         <List>
           {state.members.map(member => (
             <ListItem key={member._id}>
               <Link to={"/members/" + member._id}>
                 <strong>
-                  @{member.firstname}{member.lastname}
+                  @{member.firstName}{member.lastName}
                 </strong>
               </Link>
               <DeleteBtn onClick={() => removeMember(member._id)} />
@@ -57,7 +61,6 @@ function MembersList() {
       ) : (
         <h3>Find some peeps!!</h3>
       )}
-      
     </div>
   );
 }

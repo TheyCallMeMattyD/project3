@@ -6,6 +6,8 @@ import {
   REMOVE_MEMBER,
   UPDATE_POSTS,
   UPDATE_MEMBERS,
+  UPDATE_LOCATION,
+  UPDATE_DESTINATION,
   ADD_POST,
   ADD_MEMBER,
   ADD_FAVORITE,
@@ -42,6 +44,18 @@ const reducer = (state, action) => {
     return {
       ...state,
       members: [...action.members],
+      loading: false
+    };
+  case UPDATE_LOCATION:
+    return {
+      ...state,
+      currentLocation: action.location,
+      loading: false
+    };
+  case UPDATE_DESTINATION:
+    return {
+      ...state,
+      currentDestination: action.destination,
       loading: false
     };
 
@@ -128,8 +142,25 @@ const StoreProvider = ({ value = [], ...props }) => {
 
     },
     favorites: [],
-    loading: false
-  });
+    loading: false,
+  
+  
+    locations: [],
+    currentLocation: {
+      lat: 0,
+      lng: 0
+    },
+  
+    destinations: [],
+    currentDestination: {
+      lat: 0,
+      lng: 0
+    }
+    
+  }
+
+  
+  );
 
   return <Provider value={[state, dispatch]} {...props} />;
 };

@@ -1,13 +1,11 @@
 import React, { useRef } from "react";
-
 import { useStoreContext } from "../utils/GlobalState";
 import { ADD_MEMBER, LOADING } from "../utils/actions";
 import API from "../utils/API";
-import "../index.css";
+// import "/src/index.css";
 
 
-
-function CreateMemberForm() {
+function SignUpForm() {
   const firstNameRef = useRef();
   const lastNameRef = useRef();
   const emailRef = useRef();
@@ -18,8 +16,8 @@ function CreateMemberForm() {
     e.preventDefault();
     dispatch({ type: LOADING });
     API.saveMember({
-      firstname: firstNameRef.current.value,
-      lastname: lastNameRef.current.value,
+      firstName: firstNameRef.current.value,
+      lastName: lastNameRef.current.value,
       email: emailRef.current.value,
       password: passwordRef.current.value
     })
@@ -66,11 +64,11 @@ function CreateMemberForm() {
         <button type="submit" class="btn btn-primary btn-block">Submit</button>
       
       <p className="forgot-password text-right">
-        Already registered <a href={"/sign-in"}>sign in?</a>
+        Already registered <a href={"/login"}>sign in?</a>
       </p>
     </form>
   );
   // }
 }
 
-export default CreateMemberForm;
+export default SignUpForm;
