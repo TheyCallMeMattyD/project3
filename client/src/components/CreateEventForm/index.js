@@ -9,6 +9,7 @@ function CreateEventForm() {
   const eventRef = useRef();
   const descriptionRef = useRef();
   const locationRef = useRef();
+  const destinationRef = useRef();
   const startTimeRef = useRef();
   const endTimeRef = useRef();
   const [state, dispatch] = useStoreContext();
@@ -20,6 +21,7 @@ function CreateEventForm() {
       event: eventRef.current.value,
       description: descriptionRef.current.value,
       location: locationRef.current.value,
+      destination: destinationRef.current.value,
       startTime: startTimeRef.current.value,
       endTime: endTimeRef.current.value
     })
@@ -38,6 +40,7 @@ function CreateEventForm() {
     eventRef.current.value = "";
     descriptionRef.current.value = "";
     locationRef.current.value = "";
+    destinationRef.current.value = "";
     startTimeRef.current.value = "";
     endTimeRef.current.value = "";
   };
@@ -49,6 +52,7 @@ function CreateEventForm() {
         <input className="form-control mb-5" required ref={eventRef} placeholder="Event Name" />
         <textarea className="form-control mb-5" required ref={descriptionRef} placeholder="Description" />
         <input className="form-control mb-5" required ref={locationRef} placeholder="Start Location" />
+        <input className="form-control mb-5" required ref={destinationRef} placeholder="Destination" />
         <input className="form-control mb-5" required ref={startTimeRef} placeholder="Start Time" />
         <input className="form-control mb-5" required ref={endTimeRef} placeholder="End Time" />
         <button className="btn btn-success mt-3 mb-5" disabled={state.loading} type="submit">
