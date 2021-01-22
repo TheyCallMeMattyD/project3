@@ -3,7 +3,7 @@ import { useStoreContext } from "../utils/GlobalState";
 import { ADD_MEMBER, LOADING } from "../utils/actions";
 import API from "../utils/API";
 // import "/src/index.css";
-import SignupLoginModal from "./SignupLoginModal";
+
 
 function SignUpForm() {
   const firstNameRef = useRef();
@@ -64,7 +64,7 @@ function SignUpForm() {
         <button type="submit" class="btn btn-primary btn-block">Submit</button>
       
       <p className="forgot-password text-right">
-        Already registered <a href={"/sign-in"}>sign in?</a>
+        Already registered <a href={"/login"}>sign in?</a>
       </p>
     </form>
   );
