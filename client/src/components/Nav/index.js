@@ -5,6 +5,7 @@ import API from "../../utils/API";
 import {CLEARSTORAGE} from "../../utils/actions";
 
 function Nav() {
+  // eslint-disable-next-line
   const [store, dispatch] = useStoreContext();
   const history = useHistory();
 
@@ -12,9 +13,7 @@ function Nav() {
     API.logout()
     .then(res => {
       dispatch({type:CLEARSTORAGE});
-    
         history.push('/login')
-
     })
     .catch(err => {});
   }
@@ -38,15 +37,12 @@ function Nav() {
               </Link>
             </li>
             <li>
-             
                 <button type="button" className="btn btn-secondary ml-2" onClick={handleLogout}>Logout</button>
-             
             </li>
           </ul>
         </div>
       </div>
     </nav>
-
   );
 }
 

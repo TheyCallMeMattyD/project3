@@ -37,7 +37,7 @@ const Detail = props => {
   return (
     <>{state.currentPost ? (
       <Container fluid>
-        <Jumbotron></Jumbotron>
+        <Jumbotron/>
         <Row>
           <Col size="md-12">
             <EventHeader>

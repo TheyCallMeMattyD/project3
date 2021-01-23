@@ -4,6 +4,7 @@ import DeleteBtn from "../components/DeleteBtn";
 import { Link } from "react-router-dom";
 import { useStoreContext } from "../utils/GlobalState";
 import { REMOVE_FAVORITE, LOADING, UPDATE_FAVORITES } from "../utils/actions";
+import Jumbotron from "../components/Jumbotron";
 
 const FavoritesList = () => {
   const [state, dispatch] = useStoreContext();
@@ -26,6 +27,7 @@ const FavoritesList = () => {
 
   return (
     <div className="container mb-5 mt-5">
+      <Jumbotron/>
       <h1 className="text-center">Here's All of Your Favorite Events</h1>
 
       {state.favorites.length ? (
