@@ -12,9 +12,7 @@ function Nav() {
     API.logout()
     .then(res => {
       dispatch({type:CLEARSTORAGE});
-    
         history.push('/login')
-
     })
     .catch(err => {});
   }
