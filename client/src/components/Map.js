@@ -66,8 +66,6 @@ function MapComponent(props) {
     height: '400px'
   };
 
-  // const center = {};
-
   const locations = [
 
     state.currentLocation,
