@@ -56,7 +56,7 @@ const Detail = props => {
           <Col size="md-5 sm-12">
             <article>
               <h2 class="text-center">Event Description:</h2>
-              <p>{state.currentPost.description}</p>
+              <h3>{state.currentPost.description}</h3>
               <p>Date: {state.currentPost.date}</p>
               <p>Start Location: {state.currentPost.location}</p>
               <p>Destination: {state.currentPost.destination}</p>
@@ -75,7 +75,7 @@ const Detail = props => {
             </button>
           ) : (
               <button className="btn btn-primary mt-2" onClick={addFavorite}>
-                ❤️  Add to Favorites
+                <span role="img" aria-label="heart">❤️</span> Add to Favorites
               </button>
             )}
             </div>
