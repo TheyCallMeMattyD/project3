@@ -38,15 +38,12 @@ function Nav() {
               </Link>
             </li>
             <li>
-             
                 <button type="button" className="btn btn-secondary ml-2" onClick={handleLogout}>Logout</button>
-             
             </li>
           </ul>
         </div>
       </div>
     </nav>
-
   );
 }
 
