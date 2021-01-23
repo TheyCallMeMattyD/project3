@@ -5,6 +5,7 @@ import API from "../../utils/API";
 import {CLEARSTORAGE} from "../../utils/actions";
 
 function Nav() {
+  // eslint-disable-next-line
   const [store, dispatch] = useStoreContext();
   const history = useHistory();
 
