@@ -1,8 +1,11 @@
 import React, { useRef } from "react";
+import { useStoreContext } from "../utils/GlobalState";
 import API from "../utils/API";
 import { useHistory } from "react-router-dom";
+import {SET_CURRENT_MEMBER} from "../utils/actions";
 
 function Login() {
+    const [state, dispatch] = useStoreContext();
     const emailRef = useRef();
     const passwordRef = useRef();
     const history = useHistory();
@@ -15,7 +18,12 @@ function Login() {
         password: passwordRef.current.value
       })
         .then(result => {
+            dispatch({
+                type: SET_CURRENT_MEMBER,
+                member: result.data
+              });
             history.push('/home')
+            
         })
         .catch(err => console.log(err));
   

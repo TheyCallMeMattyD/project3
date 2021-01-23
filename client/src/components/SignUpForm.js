@@ -9,7 +9,7 @@ function SignUpForm() {
   const lastNameRef = useRef();
   const emailRef = useRef();
   const passwordRef = useRef();
-  const [dispatch] = useStoreContext();
+  const [state, dispatch] = useStoreContext();
 
   const handleSubmit = e => {
     e.preventDefault();

@@ -4,10 +4,11 @@ import { Col, Row, Container } from "../components/Grid";
 import EventHeader from "../components/EventHeader";
 import API from "../utils/API";
 import { useStoreContext } from "../utils/GlobalState";
-import { SET_CURRENT_POST, SET_CURRENT_MEMBER,  ADD_FAVORITE, REMOVE_FAVORITE } from "../utils/actions";
-import MembersList from "../components/MembersList";
+import { SET_CURRENT_POST, ADD_MEMBER,  ADD_FAVORITE, REMOVE_FAVORITE } from "../utils/actions";
+
 import MapComponent from "../components/Map";
 import Jumbotron from "../components/Jumbotron";
+import AttendingList from "../components/AttendingList";
 const Detail = props => {
   const [state, dispatch] = useStoreContext();
 
@@ -34,6 +35,15 @@ const Detail = props => {
     });
   };
 
+  const addMember = () => {
+    dispatch({
+      type: ADD_MEMBER,
+      member: state.currentMember
+    });
+  };
+
+  console.log(state)
+
   return (
     <>{state.currentPost ? (
       <Container fluid>
@@ -51,7 +61,7 @@ const Detail = props => {
         <Row>
           <Col size="md-2 sm-12" >
             <h2>Members Attending</h2>
-            <MembersList />
+            < AttendingList members={state.members}/>
           </Col>
           <Col size="md-5 sm-12">
             <article>
@@ -63,9 +73,9 @@ const Detail = props => {
               <p>Start Time: {state.currentPost.startTime}</p>
               <p>End Time: {state.currentPost.endTime}</p>
               <div className="mt-5 text-center">
-              <Link to="/home">
-                <button type="submit" class="btn btn-success">Register to Attend</button>
-              </Link>
+              
+                <button onClick={addMember} className="btn btn-success">Register to Attend</button>
+              
               <Link to="/home">
                 <button type="button" class="btn btn-primary ml-3">Back to All Events</button>
               </Link>
