@@ -5,7 +5,8 @@ import {
   REMOVE_POST,
   REMOVE_MEMBER,
   UPDATE_POSTS,
-  UPDATE_MEMBERS,
+  GET_MEMBERS,
+  SET_MEMBERS,
   UPDATE_LOCATION,
   UPDATE_DESTINATION,
   ADD_POST,
@@ -41,12 +42,19 @@ const reducer = (state, action) => {
       posts: [...action.posts],
       loading: false
     };
-  case UPDATE_MEMBERS:
+  case GET_MEMBERS:
+    return {
+      ...state,
+     
+      loading: false
+    };
+  case SET_MEMBERS:
     return {
       ...state,
       members: [...action.members],
       loading: false
     };
+
   case UPDATE_LOCATION:
     return {
       ...state,
@@ -69,7 +77,7 @@ const reducer = (state, action) => {
   case ADD_MEMBER:
     return {
       ...state,
-      members: [action.member, ...state.members],
+      members: [...state.members, action.member],
       loading: false
     };
 
