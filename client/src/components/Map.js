@@ -4,18 +4,22 @@ import { GoogleMap, LoadScript, MarkerClusterer, Marker } from '@react-google-ma
 import Geocode from "react-geocode";
 import API from "../utils/API";
 import { useStoreContext } from "../utils/GlobalState";
+
 import { UPDATE_DESTINATION, UPDATE_LOCATION} from "../utils/actions";
 
 
-function MapComponent() {
+
+
+
+function MapComponent(props) {
   Geocode.setApiKey(process.env.REACT_APP_API_KEY);
   Geocode.setLanguage("en");
   Geocode.setRegion("us");
   Geocode.enableDebug();
 
   const { id } = useParams();
-  
-  
+  // props.match.params.id
+  console.log(props)
   const [state, dispatch] = useStoreContext();
   useEffect(() => {
     API.getPost(id)
@@ -62,7 +66,6 @@ const containerStyle = {
 
 const center = {};
 
-
 const locations = [
  
   state.currentLocation,
@@ -74,10 +77,12 @@ function createKey(location) {
   return location.lat + location.lng
 }
 
-
+// console.log(locations, "RUN");
+  
+// console.log(state, "this is state")
   return (
     
-    <LoadScript
+    <LoadScript>
       googleMapsApiKey={ process.env.REACT_APP_API_KEY }
     >
       <GoogleMap
