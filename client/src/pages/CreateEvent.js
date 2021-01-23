@@ -8,7 +8,7 @@ import Jumbotron from "../components/Jumbotron";
 const CreateEvent = () => {
   return (
     <Container fluid>
-      <Jumbotron></Jumbotron>
+      <Jumbotron />
       <Row>
         <Col size="md-4 sm-12" >
           <MembersList />

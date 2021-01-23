@@ -2,7 +2,11 @@ import React, { useRef } from "react";
 import { useStoreContext } from "../utils/GlobalState";
 import API from "../utils/API";
 import { useHistory } from "react-router-dom";
+<<<<<<< HEAD
 import {SET_CURRENT_MEMBER} from "../utils/actions";
+=======
+import Jumbotron from "./Jumbotron";
+>>>>>>> e556a666a73a133a0d5744e8a450594c86b630f7
 
 function Login() {
     const [state, dispatch] = useStoreContext();
@@ -33,6 +37,7 @@ function Login() {
 
     return (
         <form onSubmit={handleSubmit}>
+            <Jumbotron></Jumbotron>
             <h3>Sign In</h3>
 
             <div className="form-group">
@@ -52,9 +57,6 @@ function Login() {
                 </div>
             </div>
             <button type="submit" class="btn btn-primary btn-block">Submit</button>
-            {/* <p className="forgot-password text-right">
-                Forgot <a href="#">password?</a>
-            </p> */}
         </form>
     );
 }

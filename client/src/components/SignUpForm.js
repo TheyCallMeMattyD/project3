@@ -1,7 +1,9 @@
 import React, { useRef } from "react";
 import { useStoreContext } from "../utils/GlobalState";
 import { ADD_MEMBER, LOADING } from "../utils/actions";
+import Jumbotron from "./Jumbotron";
 import API from "../utils/API";
+import { useHistory } from "react-router-dom";
 
 
 function SignUpForm() {
@@ -9,7 +11,13 @@ function SignUpForm() {
   const lastNameRef = useRef();
   const emailRef = useRef();
   const passwordRef = useRef();
+<<<<<<< HEAD
   const [state, dispatch] = useStoreContext();
+=======
+  // eslint-disable-next-line
+  const [state, dispatch] = useStoreContext();
+  const history = useHistory();
+>>>>>>> e556a666a73a133a0d5744e8a450594c86b630f7
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -24,8 +32,11 @@ function SignUpForm() {
         dispatch({
           type: ADD_MEMBER,
           member: result.data
-        });
+        }) 
       })
+      .then(result => {
+        history.push('/login')
+    })
       .catch(err => console.log(err));
 
     firstNameRef.current.value = "";
@@ -36,6 +47,7 @@ function SignUpForm() {
 
   return (
     <form onSubmit={handleSubmit}>
+      <Jumbotron/>
       <h3>Sign Up</h3>
 
       <div className="form-group">
@@ -57,9 +69,9 @@ function SignUpForm() {
         <label>Password</label>
         <input type="password" className="form-control" required ref={passwordRef} placeholder="Enter password" />
       </div>
-     
-        <button type="submit" class="btn btn-primary btn-block">Submit</button>
-      
+
+      <button type="submit" class="btn btn-primary btn-block">Submit</button>
+
       <p className="forgot-password text-right">
         Already registered <a href={"/login"}>sign in?</a>
       </p>

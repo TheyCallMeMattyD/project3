@@ -7,7 +7,7 @@ import "../index.css"
 const Home = () => {
   return (
     <Container fluid>
-      <Jumbotron></Jumbotron>
+      <Jumbotron />
       <Row>
         <Col size="md-4 sm-12" >
         <h2>All Members</h2>
