@@ -22,7 +22,7 @@ const FavoritesList = () => {
 
   useEffect(() => {
     getFavorites();
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <div className="container mb-5 mt-5">

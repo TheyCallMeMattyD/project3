@@ -34,7 +34,7 @@ function PostsList() {
 
   useEffect(() => {
     getPosts();
-  }, []);
+  }, []);  // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <div>

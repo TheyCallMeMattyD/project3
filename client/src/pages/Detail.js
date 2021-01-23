@@ -16,7 +16,7 @@ const Detail = props => {
       .then(res => dispatch({ type: SET_CURRENT_POST, post: res.data }))
       .catch(err => console.log(err));
      
-  }, []);
+  }, []);  // eslint-disable-line react-hooks/exhaustive-deps
 
 
 
