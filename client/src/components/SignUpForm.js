@@ -43,7 +43,7 @@ function SignUpForm() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <Jumbotron></Jumbotron>
+      <Jumbotron/>
       <h3>Sign Up</h3>
 
       <div className="form-group">

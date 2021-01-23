@@ -27,7 +27,7 @@ const FavoritesList = () => {
 
   return (
     <div className="container mb-5 mt-5">
-      <Jumbotron></Jumbotron>
+      <Jumbotron/>
       <h1 className="text-center">Here's All of Your Favorite Events</h1>
 
       {state.favorites.length ? (
