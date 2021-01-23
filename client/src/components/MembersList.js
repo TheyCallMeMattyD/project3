@@ -39,12 +39,8 @@ function MembersList() {
 
   return (
     <div>
-<<<<<<< HEAD
       <ContactForm />
       <h7 className="mb-5 mt-5">Click to Contact</h7>
-=======
-      <h3 className="mb-5 mt-5">Click to Contact</h3>
->>>>>>> eccac6957dd75800764227c367e518f13bb385db
       {state.members.length ? (
         <List>
           {state.members.map(member => (

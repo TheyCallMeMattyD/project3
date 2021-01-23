@@ -4,12 +4,8 @@
   "private": true,
   "proxy": "http://localhost:3001",
   "dependencies": {
-<<<<<<< HEAD
     "axios": "^0.18.0",
     "emailjs-com": "^2.6.4",
-=======
-    "axios": "^0.21.1",
->>>>>>> eccac6957dd75800764227c367e518f13bb385db
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0",
