@@ -89,7 +89,7 @@ function MapComponent(props) {
         id="marker-example"
         mapContainerStyle={containerStyle}
         center={state.currentLocation}
-        zoom={10}
+        zoom={12}
       >
         <MarkerClusterer>
           {(clusterer) =>
