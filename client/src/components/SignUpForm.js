@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import { useStoreContext } from "../utils/GlobalState";
 import { ADD_MEMBER, LOADING } from "../utils/actions";
+import Jumbotron from "./Jumbotron";
 import API from "../utils/API";
 
 
@@ -36,6 +37,7 @@ function SignUpForm() {
 
   return (
     <form onSubmit={handleSubmit}>
+      <Jumbotron></Jumbotron>
       <h3>Sign Up</h3>
 
       <div className="form-group">

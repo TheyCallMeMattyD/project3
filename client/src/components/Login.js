@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import API from "../utils/API";
 import { useHistory } from "react-router-dom";
+import Jumbotron from "./Jumbotron";
 
 function Login() {
     const emailRef = useRef();
@@ -25,6 +26,7 @@ function Login() {
 
     return (
         <form onSubmit={handleSubmit}>
+            <Jumbotron></Jumbotron>
             <h3>Sign In</h3>
 
             <div className="form-group">
