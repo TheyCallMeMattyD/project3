@@ -24,7 +24,7 @@ function Nav() {
               </Link>
             </li>
             <li>
-              <Link to="/logout">
+              <Link to="/Logout">
                 <button type="button" className="btn btn-secondary ml-2">Logout</button>
               </Link>
             </li>

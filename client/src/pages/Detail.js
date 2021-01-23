@@ -43,7 +43,7 @@ const Detail = props => {
             <EventHeader>
               <h1>
                 Event: {state.currentPost.event} <br />
-                Organized By: 
+                Organized By: {}
               </h1>
             </EventHeader>
           </Col>
@@ -69,23 +69,21 @@ const Detail = props => {
               <Link to="/home">
                 <button type="button" class="btn btn-primary ml-3">Back to All Events</button>
               </Link>
+              {state.favorites.indexOf(state.currentPost) !== -1 ? (
+            <button className="btn btn-danger mt-2" onClick={removeFavorite}>
+              Remove from Favorites!
+            </button>
+          ) : (
+              <button className="btn btn-primary mt-2" onClick={addFavorite}>
+                ❤️  Add to Favorites
+              </button>
+            )}
             </div>
             </article>
             </Col>
             <Col size="md-4 sm-12">
               <MapComponent />
             </Col>
-
-  
-          {state.favorites.indexOf(state.currentPost) !== -1 ? (
-            <button className="btn btn-danger" onClick={removeFavorite}>
-              Remove from Favorites!
-            </button>
-          ) : (
-              <button className="btn" onClick={addFavorite}>
-                ❤️ Add to Favorites
-              </button>
-            )}
         </Row>
       </Container>
     ) : (
