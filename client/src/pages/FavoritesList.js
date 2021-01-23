@@ -22,15 +22,15 @@ const FavoritesList = () => {
 
   useEffect(() => {
     getFavorites();
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <div className="container mb-5 mt-5">
-      <h1 className="text-center">Here's All of Your Favorite Posts</h1>
+      <h1 className="text-center">Here's All of Your Favorite Events</h1>
 
       {state.favorites.length ? (
         <List>
-          <h3 className="mb-5 mt-5">Click on a post to view in detail</h3>
+          <h3 className="mb-5 mt-5">Click on an Event to view in detail</h3>
           {state.favorites.map(post => (
             <ListItem key={post._id}>
               <Link to={"/posts/" + post._id}>
@@ -43,11 +43,11 @@ const FavoritesList = () => {
           ))}
         </List>
       ) : (
-        <h3>You haven't added any favorites yet!</h3>
+        <h3>You haven't added any favorites yet!</h3> 
       )}
-      <div className="mt-5">
-        <Link to="home">Back to home</Link>
-      </div>
+              <Link to="/home">
+                <button type="button" class="btn btn-primary ml-3 mt-5">Back to All Events</button>
+              </Link>
     </div>
   );
 };

@@ -16,7 +16,7 @@ const Detail = props => {
       .then(res => dispatch({ type: SET_CURRENT_POST, post: res.data }))
       .catch(err => console.log(err));
      
-  }, []);
+  }, []);  // eslint-disable-line react-hooks/exhaustive-deps
 
 
 
@@ -43,7 +43,7 @@ const Detail = props => {
             <EventHeader>
               <h1>
                 Event: {state.currentPost.event} <br />
-                Organized By: 
+                Organized By: {}
               </h1>
             </EventHeader>
           </Col>
@@ -56,7 +56,7 @@ const Detail = props => {
           <Col size="md-5 sm-12">
             <article>
               <h2 class="text-center">Event Description:</h2>
-              <p>{state.currentPost.description}</p>
+              <h3>{state.currentPost.description}</h3>
               <p>Date: {state.currentPost.date}</p>
               <p>Start Location: {state.currentPost.location}</p>
               <p>Destination: {state.currentPost.destination}</p>
@@ -69,23 +69,21 @@ const Detail = props => {
               <Link to="/home">
                 <button type="button" class="btn btn-primary ml-3">Back to All Events</button>
               </Link>
+              {state.favorites.indexOf(state.currentPost) !== -1 ? (
+            <button className="btn btn-danger mt-2" onClick={removeFavorite}>
+              Remove from Favorites!
+            </button>
+          ) : (
+              <button className="btn btn-primary mt-2" onClick={addFavorite}>
+                <span role="img" aria-label="heart">❤️</span> Add to Favorites
+              </button>
+            )}
             </div>
             </article>
             </Col>
             <Col size="md-4 sm-12">
               <MapComponent />
             </Col>
-
-  
-          {state.favorites.indexOf(state.currentPost) !== -1 ? (
-            <button className="btn btn-danger" onClick={removeFavorite}>
-              Remove from Favorites!
-            </button>
-          ) : (
-              <button className="btn" onClick={addFavorite}>
-                ❤️ Add to Favorites
-              </button>
-            )}
         </Row>
       </Container>
     ) : (

@@ -31,7 +31,7 @@ function MapComponent(props) {
         });
  })
       .catch(err => console.log(err));
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
  
   useEffect(() => {
     API.getPost(id)
@@ -47,7 +47,7 @@ function MapComponent(props) {
         });
  })
       .catch(err => console.log(err));
-  }, []);
+  }, []);  // eslint-disable-line react-hooks/exhaustive-deps
 
   
   

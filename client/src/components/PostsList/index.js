@@ -34,7 +34,7 @@ function PostsList() {
 
   useEffect(() => {
     getPosts();
-  }, []);
+  }, []);  // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <div>
@@ -60,6 +60,9 @@ function PostsList() {
       <div className="mt-5">     
         <Link to="CreateEvent">
           <button type="button" className="btn btn-primary">Create New Event</button>
+        </Link>
+        <Link to="Favorites">
+          <button type="button" className="btn btn-primary ml-2">View Favorites</button>
         </Link>
       </div>
     </div>

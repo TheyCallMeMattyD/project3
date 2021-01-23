@@ -34,7 +34,7 @@ function MembersList() {
 
   useEffect(() => {
     getMembers();
-  }, []);
+  }, []);  // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <div>
