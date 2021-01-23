@@ -9,4 +9,10 @@ router.post("/login", passport.authenticate("local"), function (req, res) {
     });
 });
 
+ // Route for logging user out
+ router.get("/logout", (req, res) => {
+    req.logout();
+    res.redirect("/");
+  });
+
 module.exports = router;

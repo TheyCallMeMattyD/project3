@@ -1,9 +1,11 @@
 import React, { useRef } from "react";
 import API from "../utils/API";
+import { useHistory } from "react-router-dom";
 
 function Login() {
     const emailRef = useRef();
     const passwordRef = useRef();
+    const history = useHistory();
   
     const handleSubmit = e => {
       e.preventDefault();
@@ -13,7 +15,7 @@ function Login() {
         password: passwordRef.current.value
       })
         .then(result => {
-            console.log(result);
+            history.push('/home')
         })
         .catch(err => console.log(err));
   

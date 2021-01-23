@@ -13,7 +13,8 @@ import {
   ADD_FAVORITE,
   UPDATE_FAVORITES,
   REMOVE_FAVORITE,
-  LOADING
+  LOADING,
+  CLEARSTORAGE
 } from "./actions";
 
 const StoreContext = createContext();
@@ -114,6 +115,45 @@ const reducer = (state, action) => {
       ...state,
       loading: true
     };
+
+    case CLEARSTORAGE:
+      return {
+        posts: [],
+        currentPost: {
+          _id: 0,
+          event: "",
+          description: "",
+          organizer: "",
+          location: "",
+          startTime: "",
+          endTime: ""
+        },
+        members: [],
+        currentMember: {
+          _id: 0,
+          firstname: "",
+          lastname: "",
+          email: "",
+          password: ""
+    
+        },
+        favorites: [],
+        loading: false,
+      
+      
+        locations: [],
+        currentLocation: {
+          lat: 0,
+          lng: 0
+        },
+      
+        destinations: [],
+        currentDestination: {
+          lat: 0,
+          lng: 0
+        }
+        
+      }
 
   default:
     return state;

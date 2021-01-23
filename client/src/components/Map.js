@@ -5,7 +5,7 @@ import Geocode from "react-geocode";
 import API from "../utils/API";
 import { useStoreContext } from "../utils/GlobalState";
 
-import { UPDATE_DESTINATION, UPDATE_LOCATION} from "../utils/actions";
+import { UPDATE_DESTINATION, UPDATE_LOCATION } from "../utils/actions";
 
 
 
@@ -25,82 +25,84 @@ function MapComponent(props) {
     API.getPost(id)
       .then(res => {
         Geocode.fromAddress(res.data.location).then(
-          response => { dispatch({ type: UPDATE_LOCATION, location: response.results[0].geometry.location })
-         
-      },
-         error => {
+          response => {
+            dispatch({ type: UPDATE_LOCATION, location: response.results[0].geometry.location })
+
+          },
+          error => {
             console.error(error);
-         }
+          }
         ).catch(err => {
           console.log(err)
         });
- })
+      })
       .catch(err => console.log(err));
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
- 
+
   useEffect(() => {
     API.getPost(id)
       .then(res => {
         Geocode.fromAddress(res.data.destination).then(
-          response => { dispatch({ type: UPDATE_DESTINATION, destination: response.results[0].geometry.location })
-         },
-         error => {
+          response => {
+            dispatch({ type: UPDATE_DESTINATION, destination: response.results[0].geometry.location })
+          },
+          error => {
             console.error(error);
-         }
+          }
         ).catch(err => {
           console.log(err)
         });
- })
+      })
       .catch(err => console.log(err));
   }, []);  // eslint-disable-line react-hooks/exhaustive-deps
 
-  
-  
-  
 
 
-const containerStyle = {
-  width: '400px',
-  height: '400px'
-};
 
-const center = {};
 
-const locations = [
- 
-  state.currentLocation,
-  state.currentDestination
+
+  const containerStyle = {
+    width: '400px',
+    height: '400px'
+  };
+
+  const center = {};
+
+  const locations = [
+
+    state.currentLocation,
+    state.currentDestination
 
   ];
 
-function createKey(location) {
-  return location.lat + location.lng
-}
+  function createKey(location) {
+    return location.lat + location.lng
+  }
 
-// console.log(locations, "RUN");
-  
-// console.log(state, "this is state")
+  // console.log(locations, "RUN");
+
+  // console.log(state, "this is state")
   return (
-    
+
     <LoadScript
-      googleMapsApiKey={ process.env.REACT_APP_API_KEY }
+      googleMapsApiKey={process.env.REACT_APP_API_KEY}
     >
       <GoogleMap
-      id="marker-example"
+        id="marker-example"
         mapContainerStyle={containerStyle}
-        center={ state.currentLocation }
+        center={state.currentLocation}
         zoom={10}
       >
-               <MarkerClusterer>
-            {(clusterer) =>
+        <MarkerClusterer>
+          {(clusterer) =>
             locations.map((location) => (
-                <Marker key={createKey(location)} position={location} clusterer={clusterer} />
+              <Marker key={createKey(location)} position={location} clusterer={clusterer} />
             ))
-}
-                </MarkerClusterer>
-      
-    
-        { /* Child components, such as markers, info windows, etc. */ }
+          }
+        </MarkerClusterer>
+
+
+        { /* Child components, such as markers, info windows, etc. */}
         <></>
       </GoogleMap>
     </LoadScript>
