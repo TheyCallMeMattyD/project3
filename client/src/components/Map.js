@@ -82,7 +82,7 @@ function createKey(location) {
 // console.log(state, "this is state")
   return (
     
-    <LoadScript>
+    <LoadScript
       googleMapsApiKey={ process.env.REACT_APP_API_KEY }
     >
       <GoogleMap
