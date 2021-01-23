@@ -7,7 +7,6 @@ import Nav from "./components/Nav";
 import { StoreProvider } from "./utils/GlobalState";
 import FavoritesList from "./pages/FavoritesList";
 import Login from "./components/Login";
-import Logout from "./components/Logout";
 import CreateEvent from "./pages/CreateEvent";
 import SignUpForm from "./components/SignUpForm";
 
@@ -23,7 +22,6 @@ function App() {
         <div className="auth-inner">
           <Switch>
             <Route exact path={["/", "/login"]} component={Login} />
-            <Route exact path="/logout" component={Logout} />
             <Route exact path="/signup" component={SignUpForm} />
             <Route exact path="/createevent" component={CreateEvent} />
             <Route exact path="/home" component={Home} />

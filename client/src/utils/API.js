@@ -36,6 +36,9 @@ export default {
   // Deletes the post with the given id
   deleteMember: function(id) {
     return axios.delete("/api/sign-up/" + id);
-  }
+  },
+ logout: function() {
+    return axios.get("/api/auth/logout");
+  },
 
 };
