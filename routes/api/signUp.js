@@ -11,8 +11,8 @@ router
 // Matches with "/api/sign-up/:id"
 router
   .route("/:id")
-  .get(signUpController.findById)
-  .put(signUpController.update)
-  .delete(signUpController.remove);
+  .get(isAuthenticated, signUpController.findById)
+  .put(isAuthenticated, signUpController.update)
+  .delete(isAuthenticated, signUpController.remove);
 
 module.exports = router;

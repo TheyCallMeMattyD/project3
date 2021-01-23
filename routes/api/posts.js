@@ -5,15 +5,15 @@ const isAuthenticated = require("../../config/isAuthenticated");
 // Matches with "/api/posts"
 router
   .route("/")
-  .get(postsController.findAll)
+  .get(isAuthenticated, postsController.findAll)
   .post(isAuthenticated, postsController.create);
 
 // Matches with "/api/posts/:id"
 router
   .route("/:id")
-  .get(postsController.findById)
-  .put(postsController.update)
-  .delete(postsController.remove);
+  .get(isAuthenticated, postsController.findById)
+  .put(isAuthenticated, postsController.update)
+  .delete(isAuthenticated, postsController.remove);
   // Matches with "/api/sign-up"
 
 module.exports = router;
