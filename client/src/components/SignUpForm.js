@@ -3,6 +3,7 @@ import { useStoreContext } from "../utils/GlobalState";
 import { ADD_MEMBER, LOADING } from "../utils/actions";
 import Jumbotron from "./Jumbotron";
 import API from "../utils/API";
+import { useHistory } from "react-router-dom";
 
 
 function SignUpForm() {
@@ -10,7 +11,9 @@ function SignUpForm() {
   const lastNameRef = useRef();
   const emailRef = useRef();
   const passwordRef = useRef();
-  const [dispatch] = useStoreContext();
+  // eslint-disable-next-line
+  const [state, dispatch] = useStoreContext();
+  const history = useHistory();
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -25,8 +28,11 @@ function SignUpForm() {
         dispatch({
           type: ADD_MEMBER,
           member: result.data
-        });
+        }) 
       })
+      .then(result => {
+        history.push('/login')
+    })
       .catch(err => console.log(err));
 
     firstNameRef.current.value = "";
@@ -59,9 +65,9 @@ function SignUpForm() {
         <label>Password</label>
         <input type="password" className="form-control" required ref={passwordRef} placeholder="Enter password" />
       </div>
-     
-        <button type="submit" class="btn btn-primary btn-block">Submit</button>
-      
+
+      <button type="submit" class="btn btn-primary btn-block">Submit</button>
+
       <p className="forgot-password text-right">
         Already registered <a href={"/login"}>sign in?</a>
       </p>
