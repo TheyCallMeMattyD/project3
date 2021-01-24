@@ -23,16 +23,18 @@ const Detail = props => {
     API.addFavorite(id)
       .then(res => dispatch({
         type: ADD_FAVORITE,
-        post: state.currentPost
+        eventId: id
       }))
       .catch(err => console.log(err));
   };
 
   const removeFavorite = () => {
-    dispatch({
+    API.removeFavorite(id)
+    .then(res => dispatch({
       type: REMOVE_FAVORITE,
-      _id: state.currentPost._id
-    });
+      eventId: id
+    }))
+    .catch(err => console.log(err));
   };
 
   const addMember = () => {
@@ -45,7 +47,8 @@ const Detail = props => {
   console.log(state)
 
   return (
-    <>{state.currentPost ? (
+    <div>
+    {state.currentPost ? (
       <Container fluid>
         <Jumbotron />
         <Row>
@@ -79,7 +82,7 @@ const Detail = props => {
                 <Link to="/home">
                   <button type="button" class="btn btn-primary ml-3">Back to All Events</button>
                 </Link>
-                {state.currentMember.favoritesEvents.indexOf(id) !== -1 ? (
+                {state.currentMember.favoritesEvents.filter(event => event._id === id).length ? (
                   <button className="btn btn-danger mt-2" onClick={removeFavorite}>
                     Remove from Favorites!
                   </button>
@@ -98,7 +101,8 @@ const Detail = props => {
       </Container>
     ) : (
         <div>loading...</div>
-      )}</>
+      )}
+      </div>
   );
 };
 
