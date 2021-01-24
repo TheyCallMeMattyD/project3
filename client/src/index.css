@@ -32,6 +32,7 @@ body, html, .App, #root, .auth-wrapper {
   background-color: #457b9d !important;
   color: white;
   background-size: cover;
+  background-position: 0 80%;
 }
 
 .auth-wrapper {
