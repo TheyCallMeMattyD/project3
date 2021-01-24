@@ -24,7 +24,7 @@ const AttendingList = (props) => {
 
       {props.members.length ? (
         <List>
-          <h3 className="mb-5 mt-5">Click on an Event to view in detail</h3>
+          
           {props.members.map(member => (
             <ListItem key={member._id}>
               <Link to={"/registration/" + member._id}>
