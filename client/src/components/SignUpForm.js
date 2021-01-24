@@ -12,11 +12,12 @@ function SignUpForm() {
   const emailRef = useRef();
   const passwordRef = useRef();
 
-  // const [state, dispatch] = useStoreContext();
-
-  // eslint-disable-next-line
   const [state, dispatch] = useStoreContext();
+
+ 
   const history = useHistory();
+
+
 
   const handleSubmit = e => {
     e.preventDefault();
