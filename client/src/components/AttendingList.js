@@ -20,8 +20,6 @@ const AttendingList = (props) => {
 
   return (
     <div className="container mb-5 mt-5">
-     
-
       {props.members.length ? (
         <List>
           
