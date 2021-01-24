@@ -1,31 +1,31 @@
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import EventHeader from "../components/EventHeader";
 import API from "../utils/API";
 import { useStoreContext } from "../utils/GlobalState";
-import { SET_CURRENT_POST, ADD_MEMBER,  ADD_FAVORITE, REMOVE_FAVORITE } from "../utils/actions";
-
+import { SET_CURRENT_POST, ADD_MEMBER, ADD_FAVORITE, REMOVE_FAVORITE } from "../utils/actions";
 import MapComponent from "../components/Map";
 import Jumbotron from "../components/Jumbotron";
 import AttendingList from "../components/AttendingList";
+
+
 const Detail = props => {
   const [state, dispatch] = useStoreContext();
-
+  const { id } = useParams()
   useEffect(() => {
     API.getPost(props.match.params.id)
       .then(res => dispatch({ type: SET_CURRENT_POST, post: res.data }))
       .catch(err => console.log(err));
-     
   }, []);  // eslint-disable-line react-hooks/exhaustive-deps
 
-
-
   const addFavorite = () => {
-    dispatch({
-      type: ADD_FAVORITE,
-      post: state.currentPost
-    });
+    API.addFavorite(id)
+      .then(res => dispatch({
+        type: ADD_FAVORITE,
+        post: state.currentPost
+      }))
+      .catch(err => console.log(err));
   };
 
   const removeFavorite = () => {
@@ -47,13 +47,13 @@ const Detail = props => {
   return (
     <>{state.currentPost ? (
       <Container fluid>
-        <Jumbotron/>
+        <Jumbotron />
         <Row>
           <Col size="md-12">
             <EventHeader>
               <h1>
                 Event: {state.currentPost.event} <br />
-                Organized By: {}
+                Organized By: { }
               </h1>
             </EventHeader>
           </Col>
@@ -61,7 +61,7 @@ const Detail = props => {
         <Row>
           <Col size="md-3 sm-12" >
             <h2 class="text-center">Members Attending</h2>
-            < AttendingList members={state.members}/>
+            < AttendingList members={state.members} />
           </Col>
           <Col size="md-5 sm-12">
             <article>
@@ -73,27 +73,27 @@ const Detail = props => {
               <p>Start Time: {state.currentPost.startTime}</p>
               <p>End Time: {state.currentPost.endTime}</p>
               <div className="mt-5 text-center">
-              
+
                 <button onClick={addMember} className="btn btn-success">Register to Attend</button>
-              
-              <Link to="/home">
-                <button type="button" class="btn btn-primary ml-3">Back to All Events</button>
-              </Link>
-              {state.favorites.indexOf(state.currentPost) !== -1 ? (
-            <button className="btn btn-danger mt-2" onClick={removeFavorite}>
-              Remove from Favorites!
-            </button>
-          ) : (
-              <button className="btn btn-primary mt-2" onClick={addFavorite}>
-                <span role="img" aria-label="heart">❤️</span> Add to Favorites
-              </button>
-            )}
-            </div>
+
+                <Link to="/home">
+                  <button type="button" class="btn btn-primary ml-3">Back to All Events</button>
+                </Link>
+                {state.currentMember.favoritesEvents.indexOf(id) !== -1 ? (
+                  <button className="btn btn-danger mt-2" onClick={removeFavorite}>
+                    Remove from Favorites!
+                  </button>
+                ) : (
+                    <button className="btn btn-primary mt-2" onClick={addFavorite}>
+                      <span role="img" aria-label="heart">❤️</span> Add to Favorites
+                    </button>
+                  )}
+              </div>
             </article>
-            </Col>
-            <Col size="md-4 sm-12">
-              <MapComponent />
-            </Col>
+          </Col>
+          <Col size="md-4 sm-12">
+            <MapComponent />
+          </Col>
         </Row>
       </Container>
     ) : (

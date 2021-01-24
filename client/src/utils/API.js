@@ -40,5 +40,11 @@ export default {
  logout: function() {
     return axios.get("/api/auth/logout");
   },
+  addFavorite: function(id) {
+    return axios.post(`/api/posts/favorites/${id}`);
+  },
+  removeFavorite: function(id) {
+    return axios.delete(`/api/posts/favorites/${id}`);
+  },
 
 };

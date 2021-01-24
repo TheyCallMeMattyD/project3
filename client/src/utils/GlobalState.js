@@ -142,7 +142,8 @@ const reducer = (state, action) => {
           firstname: "",
           lastname: "",
           email: "",
-          password: ""
+          password: "",
+          favoritesEvents: []
     
         },
         favorites: [],
