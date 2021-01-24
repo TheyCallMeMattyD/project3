@@ -56,6 +56,7 @@ function CreateEventForm() {
         <input className="form-control mb-5" required ref={destinationRef} placeholder="Destination" />
         <input className="form-control mb-5" required ref={startTimeRef} placeholder="Start Time" />
         <input className="form-control mb-5" required ref={endTimeRef} placeholder="End Time" />
+        <div class="text-center">
         <button className="btn btn-success mt-3 mb-5" disabled={state.loading} type="submit">
           Save Event
         </button>
@@ -64,6 +65,7 @@ function CreateEventForm() {
           Return to All Events
         </button>
         </Link>
+        </div>
       </form>
     </div>
   );
