@@ -27,8 +27,7 @@ const AttendingList = (props) => {
             <ListItem key={member._id}>
               <Link to={"/registration/" + member._id}>
                 <strong>
-                  @{member.email}
-
+                {member.firstName} {member.lastName}
                 </strong>
               </Link>
               <DeleteBtn onClick={() => removeFromMembers(member._id)} />
