@@ -59,8 +59,8 @@ const Detail = props => {
           </Col>
         </Row>
         <Row>
-          <Col size="md-2 sm-12" >
-            <h2>Members Attending</h2>
+          <Col size="md-3 sm-12" >
+            <h2 class="text-center">Members Attending</h2>
             < AttendingList members={state.members}/>
           </Col>
           <Col size="md-5 sm-12">
