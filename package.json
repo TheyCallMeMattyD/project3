@@ -25,6 +25,7 @@
     "bcryptjs": "^2.4.3",
     "bootstrap": "^4.5.3",
     "connect-mongo": "^3.2.0",
+    "emailjs-com": "^2.6.4",
     "express": "^4.17.1",
     "express-session": "^1.17.1",
     "if-env": "^1.0.4",

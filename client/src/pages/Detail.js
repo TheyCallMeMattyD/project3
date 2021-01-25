@@ -44,7 +44,7 @@ const Detail = props => {
     });
   };
 
-  console.log(state)
+  console.log(state, "state")
 
   return (
     <div>
@@ -104,6 +104,7 @@ const Detail = props => {
       )}
       </div>
   );
+ 
 };
 
 export default Detail;
