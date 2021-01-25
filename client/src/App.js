@@ -9,6 +9,7 @@ import FavoritesList from "./pages/FavoritesList";
 import Login from "./components/Login";
 import CreateEvent from "./pages/CreateEvent";
 import SignUpForm from "./components/SignUpForm";
+
 import Registration from "./components/Registration";
 
 console.log(process.env.REACT_APP_GOOGLE_API_KEY)
@@ -29,6 +30,7 @@ function App() {
             <Route exact path="/home" component={Home} />
             <Route exact path="/favorites" component={FavoritesList} />
             <Route exact path="/posts/:id" component={Detail} />
+            <Route exact path="/members/:id" component={Userinfo} /> 
             <Route component={NoMatch} />
           </Switch>
           </div>

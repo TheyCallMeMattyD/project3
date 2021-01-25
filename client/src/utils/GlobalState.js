@@ -30,6 +30,7 @@ const reducer = (state, action) => {
       loading: false
     };
   case SET_CURRENT_MEMBER:
+    console.log(action)
     return {
       ...state,
       currentMember: action.member,
