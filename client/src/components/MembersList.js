@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import { useStoreContext } from "../utils/GlobalState";
 import { REMOVE_MEMBER, UPDATE_MEMBERS, LOADING } from "../utils/actions";
 import API from "../utils/API";
-import ContactForm from "./ContactForm";
 
 function MembersList() {
   const [state, dispatch] = useStoreContext();
@@ -39,7 +38,7 @@ function MembersList() {
 
   return (
     <div>
-      <ContactForm />
+    
       <h7 className="mb-5 mt-5">Click to Contact</h7>
       {state.members.length ? (
         <List>
