@@ -42,7 +42,7 @@ const Detail = props => {
     });
   };
 
-  console.log(state)
+  console.log(state, "state")
 
   return (
     <>{state.currentPost ? (
@@ -62,6 +62,7 @@ const Detail = props => {
           <Col size="md-2 sm-12" >
             <h2>Members Attending</h2>
             < AttendingList members={state.members}/>
+            
           </Col>
           <Col size="md-5 sm-12">
             <article>
@@ -100,6 +101,7 @@ const Detail = props => {
         <div>loading...</div>
       )}</>
   );
+ 
 };
 
 export default Detail;
