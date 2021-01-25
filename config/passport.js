@@ -14,7 +14,9 @@ passport.use(
       // When a user tries to sign in this code runs
       db.User.findOne({
         email: email
-      }).then(dbUser => {
+      })
+      .populate("favoritesEvents")
+      .then(dbUser => {
         // If there's no user with the given email
         if (!dbUser) {
           return done(null, false, {
