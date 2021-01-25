@@ -34,12 +34,12 @@ function PostsList() {
 
   useEffect(() => {
     getPosts();
-  }, []);
+  }, []);  // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <div>
       <h2 className="text-center">All Events</h2>
-      <h3 className="mb-5 mt-5 text-center">Click on an Event to View/Register</h3>
+      <h3 className="mb-5 mt-5 text-center">Click Event to View/Register</h3>
       {state.posts.length ? (
         <List>
           {state.posts.map(post => (
@@ -60,6 +60,9 @@ function PostsList() {
       <div className="mt-5">     
         <Link to="CreateEvent">
           <button type="button" className="btn btn-primary">Create New Event</button>
+        </Link>
+        <Link to="Favorites">
+          <button type="button" className="btn btn-primary ml-2">View Favorites</button>
         </Link>
       </div>
     </div>

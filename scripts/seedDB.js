@@ -12,6 +12,7 @@ const bookSeed = [
     organizer: "RunningMan",
     description: "We gonna run all around town, starting at the McDonalds on Main St.",
     location: "123 Main Street",
+    destination: "7204 Tanager Street Springfield VA",
     startTime: "8 am",
     endTime: "12 pm"
   },
@@ -21,6 +22,7 @@ const bookSeed = [
     organizer: "Downtown Beer Hound",
     description: "See how many stops you can make it through... starting at Murphy's Pub",
     location: "555 Irishtown Lane",
+    destination: "123 Easy Street",
     startTime: "6 pm",
     endTime: "9 pm"
   },

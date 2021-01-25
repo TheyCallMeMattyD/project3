@@ -5,7 +5,8 @@ import {
   REMOVE_POST,
   REMOVE_MEMBER,
   UPDATE_POSTS,
-  UPDATE_MEMBERS,
+  GET_MEMBERS,
+  SET_MEMBERS,
   UPDATE_LOCATION,
   UPDATE_DESTINATION,
   ADD_POST,
@@ -13,7 +14,8 @@ import {
   ADD_FAVORITE,
   UPDATE_FAVORITES,
   REMOVE_FAVORITE,
-  LOADING
+  LOADING,
+  CLEARSTORAGE
 } from "./actions";
 
 const StoreContext = createContext();
@@ -41,7 +43,12 @@ const reducer = (state, action) => {
       posts: [...action.posts],
       loading: false
     };
-  case UPDATE_MEMBERS:
+  case GET_MEMBERS:
+    return {
+      ...state,
+      loading: false
+    };
+  case SET_MEMBERS:
     return {
       ...state,
       members: [...action.members],
@@ -59,7 +66,6 @@ const reducer = (state, action) => {
       currentDestination: action.destination,
       loading: false
     };
-
   case ADD_POST:
     return {
       ...state,
@@ -69,10 +75,9 @@ const reducer = (state, action) => {
   case ADD_MEMBER:
     return {
       ...state,
-      members: [action.member, ...state.members],
+      members: [...state.members, action.member],
       loading: false
     };
-
   case REMOVE_POST:
     return {
       ...state,
@@ -87,35 +92,64 @@ const reducer = (state, action) => {
         return member._id !== action._id; 
       })
     };
-
   case ADD_FAVORITE:
     return {
       ...state,
-      favorites: [action.post, ...state.favorites],
+      currentMember: {
+        ...state.currentMember,
+        favoritesEvents: [...state.posts.filter(event => event._id == action.eventId), ...state.currentMember.favoritesEvents]
+      },
       loading: false
     };
-
-  case UPDATE_FAVORITES:
-    return {
-      ...state,
-      favorites: [...state.favorites],
-      loading: false
-    };
-
   case REMOVE_FAVORITE:
     return {
       ...state,
-      favorites: state.favorites.filter((post) => {
-        return post._id !== action._id; 
-      })
+      currentMember: {
+        ...state.currentMember,
+        favoritesEvents: state.currentMember.favoritesEvents.filter(event => {
+          return event._id !== action.eventId; 
+        })
+      },
+      loading: false
     };
-
   case LOADING:
     return {
       ...state,
       loading: true
     };
-
+    case CLEARSTORAGE:
+      return {
+        posts: [],
+        currentPost: {
+          _id: 0,
+          event: "",
+          description: "",
+          organizer: "",
+          location: "",
+          startTime: "",
+          endTime: ""
+        },
+        members: [],
+        currentMember: {
+          _id: 0,
+          firstname: "",
+          lastname: "",
+          email: "",
+          password: "",
+          favoritesEvents: []
+        },
+        loading: false,
+        locations: [],
+        currentLocation: {
+          lat: 0,
+          lng: 0
+        },
+        destinations: [],
+        currentDestination: {
+          lat: 0,
+          lng: 0
+        }
+      }
   default:
     return state;
   }
@@ -139,13 +173,10 @@ const StoreProvider = ({ value = [], ...props }) => {
       firstname: "",
       lastname: "",
       email: "",
-      password: ""
-
+      password: "",
+      favoritesEvents: []
     },
-    favorites: [],
     loading: false,
-  
-  
     locations: [],
     currentLocation: {
       lat: 0,

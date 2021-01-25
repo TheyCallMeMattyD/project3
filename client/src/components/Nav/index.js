@@ -1,9 +1,22 @@
 import React from "react";
 import { useStoreContext } from "../../utils/GlobalState";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
+import API from "../../utils/API";
+import {CLEARSTORAGE} from "../../utils/actions";
 
 function Nav() {
-  const [store] = useStoreContext();
+  // eslint-disable-next-line
+  const [store, dispatch] = useStoreContext();
+  const history = useHistory();
+
+  function handleLogout() {
+    API.logout()
+    .then(res => {
+      dispatch({type:CLEARSTORAGE});
+        history.push('/login')
+    })
+    .catch(err => {});
+  }
 
   return (
     <nav className="navbar navbar-expand-lg mb-5 fixed-top">
@@ -24,15 +37,12 @@ function Nav() {
               </Link>
             </li>
             <li>
-              <Link to="/logout">
-                <button type="button" className="btn btn-secondary ml-2">Logout</button>
-              </Link>
+                <button type="button" className="btn btn-secondary ml-2" onClick={handleLogout}>Logout</button>
             </li>
           </ul>
         </div>
       </div>
     </nav>
-
   );
 }
 

@@ -16,11 +16,15 @@ const UserSchema = new mongoose.Schema(
             required: true,
             unique: true
         },
-
         password: {
             type: String
-        }
- 
+        },
+        favoritesEvents: [
+            {
+              type: mongoose.Schema.Types.ObjectId,
+              ref: "Post"
+            }
+          ]
     }
 );
 
