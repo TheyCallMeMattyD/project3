@@ -30,6 +30,7 @@ const reducer = (state, action) => {
       loading: false
     };
   case SET_CURRENT_MEMBER:
+    console.log(action)
     return {
       ...state,
       currentMember: action.member,
@@ -45,7 +46,6 @@ const reducer = (state, action) => {
   case GET_MEMBERS:
     return {
       ...state,
-     
       loading: false
     };
   case SET_MEMBERS:
@@ -54,7 +54,6 @@ const reducer = (state, action) => {
       members: [...action.members],
       loading: false
     };
-
   case UPDATE_LOCATION:
     return {
       ...state,
@@ -67,7 +66,6 @@ const reducer = (state, action) => {
       currentDestination: action.destination,
       loading: false
     };
-
   case ADD_POST:
     return {
       ...state,
@@ -80,7 +78,6 @@ const reducer = (state, action) => {
       members: [...state.members, action.member],
       loading: false
     };
-
   case REMOVE_POST:
     return {
       ...state,
@@ -95,35 +92,31 @@ const reducer = (state, action) => {
         return member._id !== action._id; 
       })
     };
-
   case ADD_FAVORITE:
     return {
       ...state,
-      favorites: [action.post, ...state.favorites],
+      currentMember: {
+        ...state.currentMember,
+        favoritesEvents: [...state.posts.filter(event => event._id == action.eventId), ...state.currentMember.favoritesEvents]
+      },
       loading: false
     };
-
-  case UPDATE_FAVORITES:
-    return {
-      ...state,
-      favorites: [...state.favorites],
-      loading: false
-    };
-
   case REMOVE_FAVORITE:
     return {
       ...state,
-      favorites: state.favorites.filter((post) => {
-        return post._id !== action._id; 
-      })
+      currentMember: {
+        ...state.currentMember,
+        favoritesEvents: state.currentMember.favoritesEvents.filter(event => {
+          return event._id !== action.eventId; 
+        })
+      },
+      loading: false
     };
-
   case LOADING:
     return {
       ...state,
       loading: true
     };
-
     case CLEARSTORAGE:
       return {
         posts: [],
@@ -142,27 +135,21 @@ const reducer = (state, action) => {
           firstname: "",
           lastname: "",
           email: "",
-          password: ""
-    
+          password: "",
+          favoritesEvents: []
         },
-        favorites: [],
         loading: false,
-      
-      
         locations: [],
         currentLocation: {
           lat: 0,
           lng: 0
         },
-      
         destinations: [],
         currentDestination: {
           lat: 0,
           lng: 0
         }
-        
       }
-
   default:
     return state;
   }
@@ -186,13 +173,10 @@ const StoreProvider = ({ value = [], ...props }) => {
       firstname: "",
       lastname: "",
       email: "",
-      password: ""
-
+      password: "",
+      favoritesEvents: []
     },
-    favorites: [],
     loading: false,
-  
-  
     locations: [],
     currentLocation: {
       lat: 0,

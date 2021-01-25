@@ -20,18 +20,16 @@ const AttendingList = (props) => {
 
   return (
     <div className="container mb-5 mt-5">
-     
-
       {props.members.length ? (
        
         <List>
          
+          
           {props.members.map(member => (
             <ListItem key={member._id}>
               <Link to={"/registration/" + member._id}>
                 <strong>
-                  @{member.email}
-
+                {member.firstName} {member.lastName}
                 </strong>
               </Link>
               <DeleteBtn onClick={() => removeFromMembers(member._id)} />
