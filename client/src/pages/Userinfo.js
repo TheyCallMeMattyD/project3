@@ -4,7 +4,7 @@ import { Col, Row, Container } from "../components/Grid";
 import EventHeader from "../components/EventHeader";
 import API from "../utils/API";
 import { useStoreContext } from "../utils/GlobalState";
-import { SET_CURRENT_POST, SET_CURRENT_MEMBER,  ADD_FAVORITE, REMOVE_FAVORITE } from "../utils/actions";
+import {  SET_CURRENT_MEMBER, } from "../utils/actions";
 import MembersList from "../components/MembersList";
 import Jumbotron from "../components/Jumbotron";
 import ContactForm from "../components/ContactForm";
@@ -34,11 +34,8 @@ const Userinfo = props => {
           </Col>
         </Row>
         <Row>
-          <Col size="md-6 sm-12" >
-            <h2>Members Contact</h2>
-            <MembersList />
-          </Col>
-          <Col size="md-6 sm-12">
+        
+          <Col size="md-12">
           <ContactForm />
             </Col>
             

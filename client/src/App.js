@@ -12,6 +12,7 @@ import SignUpForm from "./components/SignUpForm";
 import Userinfo from "./pages/Userinfo";
 import Registration from "./components/Registration";
 
+
 console.log(process.env.REACT_APP_GOOGLE_API_KEY)
 
 function App() {
