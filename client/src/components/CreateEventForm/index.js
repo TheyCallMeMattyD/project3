@@ -3,6 +3,7 @@ import { useStoreContext } from "../../utils/GlobalState";
 import { ADD_POST, LOADING } from "../../utils/actions";
 import API from "../../utils/API";
 import { useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function CreateEventForm() {
   const history = useHistory();
@@ -55,9 +56,16 @@ function CreateEventForm() {
         <input className="form-control mb-5" required ref={destinationRef} placeholder="Destination" />
         <input className="form-control mb-5" required ref={startTimeRef} placeholder="Start Time" />
         <input className="form-control mb-5" required ref={endTimeRef} placeholder="End Time" />
+        <div class="text-center">
         <button className="btn btn-success mt-3 mb-5" disabled={state.loading} type="submit">
           Save Event
         </button>
+        <Link to="/home">
+        <button className="btn btn-primary mt-3 mb-5 ml-2" type="button">
+          Return to All Events
+        </button>
+        </Link>
+        </div>
       </form>
     </div>
   );

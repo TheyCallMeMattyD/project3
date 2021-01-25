@@ -3,7 +3,7 @@ import { ListItem, List } from "./List";
 import DeleteBtn from "./DeleteBtn";
 import { Link } from "react-router-dom";
 import { useStoreContext } from "../utils/GlobalState";
-import { REMOVE_MEMBER, UPDATE_MEMBERS, LOADING } from "../utils/actions";
+import { REMOVE_MEMBER, LOADING, SET_MEMBERS } from "../utils/actions";
 import API from "../utils/API";
 
 function MembersList() {
@@ -25,7 +25,7 @@ function MembersList() {
     API.getMembers()
       .then(results => {
         dispatch({
-          type: UPDATE_MEMBERS,
+          type: SET_MEMBERS,
           members: results.data
         });
       })
@@ -34,19 +34,20 @@ function MembersList() {
 
   useEffect(() => {
     getMembers();
-  }, []);
+  }, []);  // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <div>
-    
-      <h7 className="mb-5 mt-5">Click to Contact</h7>
+
+      <h4 className="mb-5 mt-5">Click to Contact</h4>
+
       {state.members.length ? (
         <List>
           {state.members.map(member => (
             <ListItem key={member._id}>
               <Link to={"/members/" + member._id}>
                 <strong>
-                  @{member.firstName}{member.lastName}
+                  {member.firstName} {member.lastName}
                 </strong>
               </Link>
               <DeleteBtn onClick={() => removeMember(member._id)} />

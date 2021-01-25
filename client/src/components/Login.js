@@ -1,9 +1,19 @@
 import React, { useRef } from "react";
+import { useStoreContext } from "../utils/GlobalState";
 import API from "../utils/API";
+import { useHistory } from "react-router-dom";
+
+import {SET_CURRENT_MEMBER} from "../utils/actions";
+
+import Jumbotron from "./Jumbotron";
+
+
 
 function Login() {
+    const [state, dispatch] = useStoreContext();
     const emailRef = useRef();
     const passwordRef = useRef();
+    const history = useHistory();
   
     const handleSubmit = e => {
       e.preventDefault();
@@ -13,7 +23,12 @@ function Login() {
         password: passwordRef.current.value
       })
         .then(result => {
-            console.log(result);
+            dispatch({
+                type: SET_CURRENT_MEMBER,
+                member: result.data
+              });
+            history.push('/home')
+            
         })
         .catch(err => console.log(err));
   
@@ -23,7 +38,8 @@ function Login() {
 
     return (
         <form onSubmit={handleSubmit}>
-            <h3>Sign In</h3>
+            <Jumbotron></Jumbotron>
+            <h3>Log In</h3>
 
             <div className="form-group">
                 <label>Email address</label>
@@ -42,9 +58,6 @@ function Login() {
                 </div>
             </div>
             <button type="submit" class="btn btn-primary btn-block">Submit</button>
-            <p className="forgot-password text-right">
-                Forgot <a href="#">password?</a>
-            </p>
         </form>
     );
 }
