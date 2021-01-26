@@ -8,11 +8,6 @@ import {  LOADING, GET_MEMBERS, REMOVE_MEMBER } from "../utils/actions";
 const Registration = () => {
   const [state, dispatch] = useStoreContext();
 
-  const getMembers = () => {
-    dispatch({ type: LOADING });
-    dispatch({ type: GET_MEMBERS });
-  };
-
   const removeFromMembers = id => {
     dispatch({
       type: REMOVE_MEMBER,
@@ -21,8 +16,12 @@ const Registration = () => {
   };
 
   useEffect(() => {
+    const getMembers = () => {
+      dispatch({ type: LOADING });
+      dispatch({ type: GET_MEMBERS });
+    };
     getMembers();
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [dispatch]); 
 
   return (
     <div className="container mb-5 mt-5">
