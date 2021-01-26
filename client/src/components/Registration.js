@@ -8,21 +8,20 @@
 // const Registration = () => {
 //   const [state, dispatch] = useStoreContext();
 
-//   const getMembers = () => {
-//     dispatch({ type: LOADING });
-//     dispatch({ type: GET_MEMBERS });
-//   };
+  // const removeFromMembers = id => {
+  //   dispatch({
+  //     type: REMOVE_MEMBER,
+  //     _id: id
+  //   });
+  // };
 
-//   const removeFromMembers = id => {
-//     dispatch({
-//       type: REMOVE_MEMBER,
-//       _id: id
-//     });
-//   };
-
-//   useEffect(() => {
-//     getMembers();
-//   }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  // useEffect(() => {
+  //   const getMembers = () => {
+  //     dispatch({ type: LOADING });
+  //     dispatch({ type: GET_MEMBERS });
+  //   };
+  //   getMembers();
+  // }, [dispatch]); 
 
 //   return (
 //     <div className="container mb-5 mt-5">

@@ -20,21 +20,22 @@ function PostsList() {
       .catch(err => console.log(err));
   };
 
-  const getPosts = () => {
-    dispatch({ type: LOADING });
-    API.getPosts()
-      .then(results => {
-        dispatch({
-          type: UPDATE_POSTS,
-          posts: results.data
-        });
-      })
-      .catch(err => console.log(err));
-  };
+  
 
   useEffect(() => {
+    const getPosts = () => {
+      dispatch({ type: LOADING });
+      API.getPosts()
+        .then(results => {
+          dispatch({
+            type: UPDATE_POSTS,
+            posts: results.data
+          });
+        })
+        .catch(err => console.log(err));
+    };
     getPosts();
-  }, []);  // eslint-disable-line react-hooks/exhaustive-deps
+  }, [dispatch]);
 
   return (
     <div>
