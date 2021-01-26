@@ -17,7 +17,7 @@ const Detail = props => {
     API.getPost(props.match.params.id)
       .then(res => dispatch({ type: SET_CURRENT_POST, post: res.data }))
       .catch(err => console.log(err));
-  }, []);  // eslint-disable-line react-hooks/exhaustive-deps
+  }, [dispatch, props.match.params.id]);
 
   const addFavorite = () => {
     API.addFavorite(id)
