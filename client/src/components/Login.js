@@ -3,7 +3,7 @@ import { useStoreContext } from "../utils/GlobalState";
 import API from "../utils/API";
 import { useHistory } from "react-router-dom";
 
-import {SET_CURRENT_MEMBER} from "../utils/actions";
+import {ADD_MEMBER} from "../utils/actions";
 
 import Jumbotron from "./Jumbotron";
 
@@ -24,7 +24,7 @@ function Login() {
       })
         .then(result => {
             dispatch({
-                type: SET_CURRENT_MEMBER,
+                type: ADD_MEMBER,
                 member: result.data
               });
             history.push('/home')

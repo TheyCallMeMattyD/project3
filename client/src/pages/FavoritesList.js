@@ -1,9 +1,9 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { ListItem, List } from "../components/List";
 import DeleteBtn from "../components/DeleteBtn";
 import { Link } from "react-router-dom";
 import { useStoreContext } from "../utils/GlobalState";
-import { REMOVE_FAVORITE, LOADING, UPDATE_FAVORITES } from "../utils/actions";
+import { REMOVE_FAVORITE } from "../utils/actions";
 import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
 
