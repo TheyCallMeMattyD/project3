@@ -12,7 +12,6 @@ import {
   ADD_POST,
   ADD_MEMBER,
   ADD_FAVORITE,
-  UPDATE_FAVORITES,
   REMOVE_FAVORITE,
   LOADING,
   CLEARSTORAGE
@@ -97,7 +96,7 @@ const reducer = (state, action) => {
       ...state,
       currentMember: {
         ...state.currentMember,
-        favoritesEvents: [...state.posts.filter(event => event._id == action.eventId), ...state.currentMember.favoritesEvents]
+        favoritesEvents: [...state.posts.filter(event => event._id === action.eventId), ...state.currentMember.favoritesEvents]
       },
       loading: false
     };

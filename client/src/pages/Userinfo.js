@@ -1,11 +1,9 @@
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import EventHeader from "../components/EventHeader";
 import API from "../utils/API";
 import { useStoreContext } from "../utils/GlobalState";
 import {  SET_CURRENT_MEMBER, } from "../utils/actions";
-import MembersList from "../components/MembersList";
 import Jumbotron from "../components/Jumbotron";
 import ContactForm from "../components/ContactForm";
 const Userinfo = props => {
@@ -16,13 +14,12 @@ const Userinfo = props => {
     .then(res => dispatch({ type: SET_CURRENT_MEMBER, member: res.data }))
     .catch(err => console.log(err));
      
-  }, []);
-
+  }, [props.match.params.id, dispatch]);
 
   return (
     <>{state.currentMember ? (
       <Container fluid>
-        <Jumbotron></Jumbotron>
+        <Jumbotron />
         <Row>
           <Col size="md-12">
             <EventHeader>

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { ListItem, List } from "../components/List";
 import DeleteBtn from "../components/DeleteBtn";
 import { Link } from "react-router-dom";
@@ -6,6 +6,7 @@ import { useStoreContext } from "../utils/GlobalState";
 import {   REMOVE_MEMBER } from "../utils/actions";
 
 const AttendingList = (props) => {
+  // eslint-disable-next-line no-unused-vars
   const [state, dispatch] = useStoreContext();
 
  console.log(props, "props")
@@ -23,8 +24,6 @@ const AttendingList = (props) => {
       {props.members.length ? (
        
         <List>
-         
-          
           {props.members.map(member => (
             <ListItem key={member._id}>
               <Link to={"/registration/" + member._id}>

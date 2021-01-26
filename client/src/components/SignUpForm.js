@@ -11,14 +11,9 @@ function SignUpForm() {
   const lastNameRef = useRef();
   const emailRef = useRef();
   const passwordRef = useRef();
-
+  // eslint-disable-next-line no-unused-vars
   const [state, dispatch] = useStoreContext();
-
- 
   const history = useHistory();
-
-
-
   const handleSubmit = e => {
     e.preventDefault();
     dispatch({ type: LOADING });
@@ -32,11 +27,11 @@ function SignUpForm() {
         dispatch({
           type: ADD_MEMBER,
           member: result.data
-        }) 
+        })
       })
       .then(result => {
         history.push('/login')
-    })
+      })
       .catch(err => console.log(err));
 
     firstNameRef.current.value = "";
@@ -47,7 +42,7 @@ function SignUpForm() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <Jumbotron/>
+      <Jumbotron />
       <h3>Sign Up</h3>
 
       <div className="form-group">

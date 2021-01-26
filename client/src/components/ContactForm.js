@@ -3,7 +3,7 @@ import React from 'react';
 import { useStoreContext } from "../utils/GlobalState";
 
 export default function ContactUs() {
-const [state, dispatch] = useStoreContext();
+const [state] = useStoreContext();
   function sendEmail(e) {
     
     e.preventDefault();
