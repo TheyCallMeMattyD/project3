@@ -19,9 +19,7 @@ function PostsList() {
       })
       .catch(err => console.log(err));
   };
-
   
-
   useEffect(() => {
     const getPosts = () => {
       dispatch({ type: LOADING });
