@@ -32,7 +32,7 @@
 ## Usage
 >Use the search box at the top of the screen to filter employees by name.<br/><br/>  
 >1. To run the employee summary generator, enter 'npm start' in the terminal.  
->2. Or, if you just want to view/use the app, go here: https://theycallmemattyd.github.io/user-directory/  
+>2. Or, if you just want to view/use the app, go here: https://run4app.herokuapp.com/ 
 >  
 >![Screen Shot 2021-01-25 at 8 27 15 PM](https://user-images.githubusercontent.com/66084799/105786793-be033800-5f4b-11eb-811e-78d2a81bc8f0.png)  
 
