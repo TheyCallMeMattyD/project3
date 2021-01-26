@@ -10,14 +10,13 @@ import Jumbotron from "./Jumbotron";
 
 
 function Login() {
+    // eslint-disable-next-line no-unused-vars
     const [state, dispatch] = useStoreContext();
     const emailRef = useRef();
     const passwordRef = useRef();
     const history = useHistory();
-  
     const handleSubmit = e => {
       e.preventDefault();
-
       API.authenticateMember({
         email: emailRef.current.value,
         password: passwordRef.current.value
@@ -31,7 +30,6 @@ function Login() {
             
         })
         .catch(err => console.log(err));
-  
       emailRef.current.value = "";
       passwordRef.current.value = "";
     };  

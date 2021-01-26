@@ -20,27 +20,24 @@ function MembersList() {
       .catch(err => console.log(err));
   };
 
-  const getMembers = () => {
-    dispatch({ type: LOADING });
-    API.getMembers()
-      .then(results => {
-        dispatch({
-          type: SET_MEMBERS,
-          members: results.data
-        });
-      })
-      .catch(err => console.log(err));
-  };
-
   useEffect(() => {
+    const getMembers = () => {
+      dispatch({ type: LOADING });
+      API.getMembers()
+        .then(results => {
+          dispatch({
+            type: SET_MEMBERS,
+            members: results.data
+          });
+        })
+        .catch(err => console.log(err));
+    };
     getMembers();
-  }, []);  // eslint-disable-line react-hooks/exhaustive-deps
+  }, [dispatch]);
 
   return (
     <div>
-
       <h4 className="mb-5 mt-5">Click to Contact</h4>
-
       {state.members.length ? (
         <List>
           {state.members.map(member => (
