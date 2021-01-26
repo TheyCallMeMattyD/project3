@@ -4,7 +4,6 @@ import { GoogleMap, LoadScript, MarkerClusterer, Marker } from '@react-google-ma
 import Geocode from "react-geocode";
 import API from "../utils/API";
 import { useStoreContext } from "../utils/GlobalState";
-
 import { UPDATE_DESTINATION, UPDATE_LOCATION } from "../utils/actions";
 
 
@@ -27,7 +26,6 @@ function MapComponent(props) {
         Geocode.fromAddress(res.data.location).then(
           response => {
             dispatch({ type: UPDATE_LOCATION, location: response.results[0].geometry.location })
-
           },
           error => {
             console.error(error);
@@ -37,10 +35,7 @@ function MapComponent(props) {
         });
       })
       .catch(err => console.log(err));
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
-
-  useEffect(() => {
-    API.getPost(id)
+      API.getPost(id)
       .then(res => {
         Geocode.fromAddress(res.data.destination).then(
           response => {
@@ -54,12 +49,7 @@ function MapComponent(props) {
         });
       })
       .catch(err => console.log(err));
-  }, []);  // eslint-disable-line react-hooks/exhaustive-deps
-
-
-
-
-
+  }, [dispatch, id]); 
 
   const containerStyle = {
     width: '350px',
@@ -67,21 +57,15 @@ function MapComponent(props) {
   };
 
   const locations = [
-
     state.currentLocation,
     state.currentDestination
-
   ];
 
   function createKey(location) {
     return location.lat + location.lng
   }
 
-  // console.log(locations, "RUN");
-
-  // console.log(state, "this is state")
   return (
-
     <LoadScript
       googleMapsApiKey={process.env.REACT_APP_API_KEY}
     >
