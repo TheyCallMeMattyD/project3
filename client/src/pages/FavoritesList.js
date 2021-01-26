@@ -17,17 +17,7 @@ const FavoritesList = () => {
     }))
     .catch(err => console.log(err));
   };
-
   const [state, dispatch] = useStoreContext();
-
-  // const getFavorites = () => {
-  //   dispatch({ type: LOADING });
-  //   dispatch({ type: UPDATE_FAVORITES });
-  // };
-
-  // useEffect(() => {
-  //   getFavorites();
-  // }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <div className="container mb-5 mt-5">
