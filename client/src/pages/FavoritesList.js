@@ -17,7 +17,6 @@ const FavoritesList = () => {
     }))
     .catch(err => console.log(err));
   };
-
   const [state, dispatch] = useStoreContext();
 
   return (
