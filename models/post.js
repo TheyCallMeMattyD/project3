@@ -8,7 +8,13 @@ const postSchema = new Schema({
   location: {type: String, required: true},
   destination: {type: String, required: true},
   startTime: {type: String, required: true},
-  endTime: {type: String, required: true}
+  endTime: {type: String, required: true},
+  addsAttendee: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User"
+    }
+  ]
 });
 
 const Post = mongoose.model("Post", postSchema);
