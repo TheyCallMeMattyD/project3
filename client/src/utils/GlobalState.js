@@ -12,6 +12,8 @@ import {
   ADD_POST,
   ADD_MEMBER,
   ADD_FAVORITE,
+  ADD_ATTENDEE,
+  REMOVE_ATTENDEE,
   REMOVE_FAVORITE,
   LOADING,
   CLEARSTORAGE
@@ -100,6 +102,15 @@ const reducer = (state, action) => {
       },
       loading: false
     };
+  case ADD_ATTENDEE:
+    return {
+      ...state,
+      currentPost: {
+        ...state.currentPost,
+        addsAttendee: [state.members.filter(attendee => attendee._id === action.attendeeId)[0]._id, ...state.currentPost.addsAttendee]
+      },
+      loading: false
+    };
   case REMOVE_FAVORITE:
     return {
       ...state,
@@ -107,6 +118,17 @@ const reducer = (state, action) => {
         ...state.currentMember,
         favoritesEvents: state.currentMember.favoritesEvents.filter(event => {
           return event._id !== action.eventId; 
+        })
+      },
+      loading: false
+    };
+  case REMOVE_ATTENDEE:
+    return {
+      ...state,
+      currentPost: {
+        ...state.currentPost,
+        addsAttendee: state.currentPost.addsAttendee.filter(attendeeId => {
+          return attendeeId !== action.attendeeId; 
         })
       },
       loading: false
@@ -126,7 +148,8 @@ const reducer = (state, action) => {
           organizer: "",
           location: "",
           startTime: "",
-          endTime: ""
+          endTime: "",
+          addsAttendee: []
         },
         members: [],
         currentMember: {
@@ -164,7 +187,8 @@ const StoreProvider = ({ value = [], ...props }) => {
       organizer: "",
       location: "",
       startTime: "",
-      endTime: ""
+      endTime: "",
+      addsAttendee: []
     },
     members: [],
     currentMember: {

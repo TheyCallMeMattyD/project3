@@ -40,6 +40,12 @@ export default {
  logout: function() {
     return axios.get("/api/auth/logout");
   },
+  addAttendee: function(id) {
+    return axios.post(`/api/sign-up/registration/${id}`);
+  },
+  removeAttendee: function(id) {
+    return axios.delete(`/api/sign-up/registration/${id}`);
+  },
   addFavorite: function(id) {
     return axios.post(`/api/posts/favorites/${id}`);
   },

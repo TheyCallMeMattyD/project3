@@ -7,6 +7,8 @@ export const LOADING = "LOADING";
 export const ADD_FAVORITE = "ADD_FAVORITE";
 export const REMOVE_FAVORITE = "REMOVE_FAVORITE";
 export const UPDATE_FAVORITES = "UPDATE_FAVORITES";
+export const ADD_ATTENDEE = "ADD_ATTENDEE";
+export const REMOVE_ATTENDEE = "REMOVE_ATTENDEE";
 
 export const ADD_MEMBER = "ADD_MEMBER";
 export const GET_MEMBERS = "GET_MEMBERS";
