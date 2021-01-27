@@ -42,7 +42,7 @@ const FavoritesList = () => {
         <h3>You haven't added any favorites yet!</h3> 
       )}
               <Link to="/home">
-                <button type="button" class="btn btn-primary ml-3 mt-5">Back to All Events</button>
+                <button type="button" class="btn btn-success ml-3 mt-5">Back to All Events</button>
               </Link>
     </div>
   );
