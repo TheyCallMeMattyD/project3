@@ -96,25 +96,25 @@ const Detail = props => {
               <p>End Time: {state.currentPost.endTime}</p>
               <div className="mt-5 text-center">
               <Link to="/home">
-               <button type="button" class="btn btn-primary ml-3">Back to All Events</button>
+               <button type="button" class="btn btn-primary mt-2 ml-2">Back to All Events</button>
              </Link>
               {state.currentPost.addsAttendee.filter(attendeeId => attendeeId === state.currentMember._id).length ? (
-                  <button className="btn btn-danger mt-2" onClick={removeAttendee}>
+                  <button className="btn btn-danger mt-2 ml-2" onClick={removeAttendee}>
                     Cancel Registration
                   </button>
                 ) : (
-                    <button className="btn btn-primary mt-2" onClick={addAttendee}>
+                    <button className="btn btn-primary mt-2 ml-2" onClick={addAttendee}>
                       <span role="img" aria-label="heart">❤️</span> Register
                     </button>
                   )}
                 
 
                 {state.currentMember.favoritesEvents.filter(event => event._id === id).length ? (
-                  <button className="btn btn-danger mt-2" onClick={removeFavorite}>
+                  <button className="btn btn-danger mt-2 ml-2" onClick={removeFavorite}>
                     Remove from Favorites!
                   </button>
                 ) : (
-                    <button className="btn btn-primary mt-2" onClick={addFavorite}>
+                    <button className="btn btn-primary mt-2 ml-2" onClick={addFavorite}>
                       <span role="img" aria-label="heart">❤️</span> Add to Favorites
                     </button>
                   )}
