@@ -31,8 +31,7 @@
   
 ## Usage
 >Use the search box at the top of the screen to filter employees by name.<br/><br/>  
->1. To run the employee summary generator, enter 'npm start' in the terminal.  
->2. Or, if you just want to view/use the app, go here: https://run4app.herokuapp.com/ 
+>1. To view/use the app, go here: https://run4app.herokuapp.com/ 
 >  
 >![Screen Shot 2021-01-27 at 7 03 47 PM](https://user-images.githubusercontent.com/66084799/106070479-8a064f00-60d2-11eb-8494-4deb4416761a.png)
 
