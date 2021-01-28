@@ -19,7 +19,7 @@
 >4. [Usage](#Usage)
 >5. [License](#License)
 >6. [Contributing](#Contributing)  
->8. [Questions?](#Questions?)
+>8. [Questions](#Questions)
   
 ## Installation
 >1. There's a LOT of dependencies going on here, so you should just run `npm i` to get everything installed.    
@@ -36,7 +36,7 @@
 ## Contributing  
 >Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.  
    
-## Questions?  
+## Questions  
 >Please direct all questions to:  
 >Matt Daniels - TheMattyD@outlook.com  
 >Alan Bramley - oldcitycatering@gmail.com  
