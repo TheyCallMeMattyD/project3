@@ -55,7 +55,7 @@ import DeleteBtn from "../components/DeleteBtn";
 
 
 
-const AttendingList = () => {
+const AttendingList = (props) => {
   const [state, dispatch] = useStoreContext();
   const removeAttendee = (id) => {
     API.removeAttendee(id)
@@ -65,8 +65,8 @@ const AttendingList = () => {
     }))
     .catch(err => console.log(err));
   };
+console.log(props, "propssss");
 
-  
 
   return (
     <div className="container mb-5 mt-5">
