@@ -34,7 +34,7 @@
 >1. To run the employee summary generator, enter 'npm start' in the terminal.  
 >2. Or, if you just want to view/use the app, go here: https://run4app.herokuapp.com/ 
 >  
->![Screen Shot 2021-01-25 at 8 27 15 PM](https://user-images.githubusercontent.com/66084799/105786793-be033800-5f4b-11eb-811e-78d2a81bc8f0.png)  
+>![Screen Shot 2021-01-27 at 7 03 47 PM](https://user-images.githubusercontent.com/66084799/106070479-8a064f00-60d2-11eb-8494-4deb4416761a.png)
 
 ## License  
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)  
