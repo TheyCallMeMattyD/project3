@@ -15,7 +15,6 @@ function CreateEventForm() {
   const startTimeRef = useRef();
   const endTimeRef = useRef();
   const [state, dispatch] = useStoreContext();
-  console.log(state);
   const handleSubmit = e => {
     e.preventDefault();
     dispatch({ type: LOADING });

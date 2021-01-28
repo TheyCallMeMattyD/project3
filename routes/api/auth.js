@@ -3,7 +3,6 @@ const passport = require("passport");
 
 router.post("/login", passport.authenticate("local"), function (req, res) {
     // Sending back a password, even a hashed password, isn't a good idea
-    console.log(req.user)
     res.json({
         email: req.user.email,
         _id: req.user.id,
