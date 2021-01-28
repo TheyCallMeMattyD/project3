@@ -6,10 +6,6 @@ import API from "../utils/API";
 import { useStoreContext } from "../utils/GlobalState";
 import { UPDATE_DESTINATION, UPDATE_LOCATION } from "../utils/actions";
 
-
-
-
-
 function MapComponent(props) {
   Geocode.setApiKey(process.env.REACT_APP_API_KEY);
   Geocode.setLanguage("en");
@@ -17,7 +13,6 @@ function MapComponent(props) {
   Geocode.enableDebug();
 
   const { id } = useParams();
-  // props.match.params.id
   console.log(props)
   const [state, dispatch] = useStoreContext();
   useEffect(() => {
@@ -73,7 +68,7 @@ function MapComponent(props) {
         id="marker-example"
         mapContainerStyle={containerStyle}
         center={state.currentLocation}
-        zoom={12}
+        zoom={13}
       >
         <MarkerClusterer>
           {(clusterer) =>
@@ -82,7 +77,6 @@ function MapComponent(props) {
             ))
           }
         </MarkerClusterer>
-
 
         { /* Child components, such as markers, info windows, etc. */}
         <></>
