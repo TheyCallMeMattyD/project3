@@ -11,10 +11,11 @@ function CreateEventForm() {
   const descriptionRef = useRef();
   const locationRef = useRef();
   const destinationRef = useRef();
+  const dateRef = useRef();
   const startTimeRef = useRef();
   const endTimeRef = useRef();
   const [state, dispatch] = useStoreContext();
-
+  console.log(state);
   const handleSubmit = e => {
     e.preventDefault();
     dispatch({ type: LOADING });
@@ -24,13 +25,16 @@ function CreateEventForm() {
       location: locationRef.current.value,
       destination: destinationRef.current.value,
       startTime: startTimeRef.current.value,
-      endTime: endTimeRef.current.value
+      endTime: endTimeRef.current.value,
+      organizer: state.currentMember.fullName,
+      date: dateRef.current.value
     })
       .then(result => {
         dispatch({
           type: ADD_POST,
           post: result.data
         });
+        history.push("/home")
       })
       .catch((error) => {
         if (error.response.status === 401) {
@@ -44,6 +48,7 @@ function CreateEventForm() {
     destinationRef.current.value = "";
     startTimeRef.current.value = "";
     endTimeRef.current.value = "";
+    dateRef.current.value = "";
   };
 
   return (
@@ -54,8 +59,9 @@ function CreateEventForm() {
         <textarea className="form-control mb-5" required ref={descriptionRef} placeholder="Description" />
         <input className="form-control mb-5" required ref={locationRef} placeholder="Start Location" />
         <input className="form-control mb-5" required ref={destinationRef} placeholder="Destination" />
-        <input className="form-control mb-5" required ref={startTimeRef} placeholder="Start Time" />
-        <input className="form-control mb-5" required ref={endTimeRef} placeholder="End Time" />
+        <input type="date" className="form-control mb-5" required ref={dateRef} placeholder="Date" />
+        <input type="time" className="form-control mb-5" required ref={startTimeRef} placeholder="Start Time" />
+        <input type="time" className="form-control mb-5" required ref={endTimeRef} placeholder="End Time" />
         <div class="text-center">
         <button className="btn btn-success mt-3 mb-5" disabled={state.loading} type="submit">
           Save Event
