@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { useStoreContext } from "../../utils/GlobalState";
 import { REMOVE_POST, UPDATE_POSTS, LOADING } from "../../utils/actions";
 import API from "../../utils/API";
-
+import moment from "moment";
 function PostsList() {
   const [state, dispatch] = useStoreContext();
 
@@ -46,7 +46,7 @@ function PostsList() {
               <Link to={"/posts/" + post._id}>
                 <strong>
                   {post.event} by {post.organizer}<br/>
-                  Date: {post.date}
+                  Date: {moment(post.date).format("MMM Do YYYY")}
                 </strong>
               </Link>
               <DeleteBtn onClick={() => removePost(post._id)} />
