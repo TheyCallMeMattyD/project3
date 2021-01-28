@@ -38,8 +38,8 @@
    
 ## Questions  
 >Please direct all questions to:  
->TheMattyD@outlook.com  
->oldcitycatering@gmail.com  
+>Matt Daniels - TheMattyD@outlook.com  
+>Alan Bramley - oldcitycatering@gmail.com  
 >  
 >Check our GitHub Profiles @  
 >https://github.com/TheyCallMeMattyD   
