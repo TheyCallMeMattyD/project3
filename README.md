@@ -22,16 +22,10 @@
 >8. [Questions?](#Questions?)
   
 ## Installation
->1. Be sure you've installed npm (node project manager) and node.js on your system.  
->2. Ensure the follow dependencies are installed by entering the following code in your terminal:  
->   a. npm i react  
->   b. npm i axios  
->   c. npm i react-dom  
->   d. npm i react-scripts  
+>1. There's a LOT of dependencies going on here, so you should just run `npm i` to get everything installed.    
   
 ## Usage
->Use the search box at the top of the screen to filter employees by name.<br/><br/>  
->1. To view/use the app, go here: https://run4app.herokuapp.com/ 
+>1. To view/use the app, go here: https://run4app.herokuapp.com/  
 >  
 >![Screen Shot 2021-01-27 at 7 03 47 PM](https://user-images.githubusercontent.com/66084799/106070479-8a064f00-60d2-11eb-8494-4deb4416761a.png)
 
@@ -41,7 +35,6 @@
   
 ## Contributing  
 >Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.  
->Please make sure to update tests as appropriate.  
    
 ## Questions  
 >Please direct all questions to:  

@@ -2,7 +2,6 @@ import { Col, Row, Container } from "../components/Grid";
 import emailjs from 'emailjs-com';
 import React  from 'react';
 import { useStoreContext } from "../utils/GlobalState";
-import { Col, Row, Container } from "../components/Grid";
 
 export default function ContactUs() {
   const [state] = useStoreContext();
@@ -20,9 +19,7 @@ export default function ContactUs() {
 
   return (
     <div className="container">
-
         <form onSubmit={sendEmail} id="template_xmsmsvv" style={{ display: "block", paddingTop: 10, paddingLeft: 25, textAlign: "left" }}>
-          
           <input type="hidden" name="to_name" value={state.currentMember.firstName} />
           <input type="hidden" name="to_email" value={state.currentMember.email} />
           <label>Name</label> <br />
@@ -31,8 +28,7 @@ export default function ContactUs() {
           <input type="email" name="to_email" /> <br />
           <label>Message</label> <br />
           <textarea name="message" /> <br />
-          <input type="submit" value="Send" />
-          
+          <input type="submit" value="Send" />  
         </form>
       </div>
   );
