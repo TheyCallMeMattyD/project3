@@ -1,8 +1,8 @@
-import { Col, Row, Container } from "../components/Grid";
+
 import emailjs from 'emailjs-com';
 import React  from 'react';
 import { useStoreContext } from "../utils/GlobalState";
-import { Col, Row, Container } from "../components/Grid";
+
 
 export default function ContactUs() {
   const [state] = useStoreContext();
