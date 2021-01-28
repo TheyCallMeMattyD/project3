@@ -26,8 +26,13 @@ const Userinfo = props => {
             <EventHeader>
               <h1>
                {state.currentMember.firstName} <br />
-               {state.currentMember.lastName}
-              </h1>
+               {state.currentMember.lastName} 
+               </h1>
+               <br />
+               <h2>
+               {state.currentMember.email}
+               </h2>
+             
             </EventHeader>
           </Col>
         </Row>

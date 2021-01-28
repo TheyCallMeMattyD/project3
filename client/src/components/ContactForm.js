@@ -1,8 +1,10 @@
+import { Col, Row, Container } from "../components/Grid";
 import emailjs from 'emailjs-com';
-import React from 'react';
+import React  from 'react';
 import { useStoreContext } from "../utils/GlobalState";
 
 export default function ContactUs() {
+ 
 const [state] = useStoreContext();
   function sendEmail(e) {
     
@@ -17,8 +19,12 @@ const [state] = useStoreContext();
 }
 
   return(
-    <div className="container">
-    <form onSubmit={sendEmail} id="template_xmsmsvv" style={{ display:"block", paddingTop: 10, paddingLeft: 25, textAlign: "left" }}>
+    // <div className="container">
+    <Container fluid>
+      <Row>
+          <Col size="md-12">
+    <form onSubmit={sendEmail} id="template_xmsmsvv" style={{  display:"block", paddingTop: 10, paddingLeft: 25
+    , textAlign: "left" }}>
 
       <input type="hidden" name="to_name" value={state.currentMember.firstName} />
       <input type="hidden" name="to_email" value={state.currentMember.email} />
@@ -29,7 +35,11 @@ const [state] = useStoreContext();
       <label>Message</label> <br/>
       <textarea name="message" /> <br/>
       <input type="submit" value="Send" />
-    </form> </div>
+    </form> 
+    </Col>
+    </Row>
+  
+    </Container>
 
   );
 }
