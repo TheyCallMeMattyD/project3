@@ -38,6 +38,8 @@
    
 ## Questions  
 >Please direct all questions to:  
-TheMattyD@outlook.com<br/>  
-Check out my GitHub Profile @ https://github.com/TheyCallMeMattyD   
+>TheMattyD@outlook.com<br/>  
+>Check our GitHub Profiles @  
+>https://github.com/TheyCallMeMattyD   
+>https://github.com/chefbrams  
 
