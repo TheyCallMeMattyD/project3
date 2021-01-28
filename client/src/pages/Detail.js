@@ -8,7 +8,7 @@ import { SET_CURRENT_POST, ADD_ATTENDEE, ADD_FAVORITE, REMOVE_FAVORITE, REMOVE_A
 import MapComponent from "../components/Map";
 import Jumbotron from "../components/Jumbotron";
 import AttendingList from "../components/AttendingList";
-
+import moment from "moment";
 const Detail = props => {
   const [state, dispatch] = useStoreContext();
   const { id } = useParams();
@@ -64,7 +64,8 @@ const Detail = props => {
 
 
   console.log(state, "state")
-
+  console.log(state.currentPost.date, "date")
+  console.log(typeof(state.currentPost.date), "date")
   return (
     <div>
     {state.currentPost ? (
@@ -89,7 +90,8 @@ const Detail = props => {
             <article>
               <h2 class="text-center">Event Description:</h2>
               <h3>{state.currentPost.description}</h3>
-              <p>Date: {state.currentPost.date}</p>
+              <p>Date: {moment(state.currentPost.date).format("MMM Do YYYY")}</p>
+              
               <p>Start Location: {state.currentPost.location}</p>
               <p>Destination: {state.currentPost.destination}</p>
               <p>Start Time: {state.currentPost.startTime}</p>
