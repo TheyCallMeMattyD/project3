@@ -9,11 +9,7 @@ import FavoritesList from "./pages/FavoritesList";
 import Login from "./components/Login";
 import CreateEvent from "./pages/CreateEvent";
 import SignUpForm from "./components/SignUpForm";
-<<<<<<< HEAD
-import Userinfo from "./pages/Userinfo";
-=======
 import Registration from "./components/Registration";
->>>>>>> 11b748bc45f7adcdd6860b3fa0b5fb1c7f21bdf4
 
 console.log(process.env.REACT_APP_GOOGLE_API_KEY)
 
